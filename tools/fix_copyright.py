@@ -15,6 +15,7 @@ for root, subdirs, files in os.walk(walk_dir):
         if filename.endswith(".h") or filename.endswith(".m"):
             filepath = os.path.join(root,filename)
             with open(filepath, "r", encoding="utf-8") as f:
+                print("fixing: ",filename)
                 line_no = 0;
                 for line in f:
                     if line_no >= 7:
@@ -28,5 +29,5 @@ for root, subdirs, files in os.walk(walk_dir):
             
             file_data=""
                     
-
+print("Done!")
             

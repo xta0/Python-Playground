@@ -16,4 +16,5 @@ weights = torch.randn_like(features)
 #and a true bias term
 bias = torch.randn((1,1))
 
-sum_result = activation(bias + torch.sum(features * weights))
+y = activation(bias + torch.mm(features, weights.view(5,1)))
+
