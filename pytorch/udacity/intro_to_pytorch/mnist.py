@@ -19,10 +19,9 @@ trainloader = torch.utils.data.DataLoader(trainset, batch_size=64, shuffle=True)
 dataiter = iter(trainloader)
 images, labels = dataiter.next()
 
-print(type(images)) #tensor
-print(images.shape) #64,1,28,28
-print(labels.shape) #64
-
+# print(type(images)) #tensor
+# print(images.shape) #64,1,28,28
+# print(labels.shape) #64
 # plt.imshow(images[1].numpy().squeeze(), cmap='Greys_r')
 # plt.show()
 
@@ -45,6 +44,27 @@ B2 = torch.randn(1, n_output)
 
 h = activation(torch.mm(features, W1)+B1) #64x256
 y = activation(torch.mm(h, W2)+B2) #64x10
+print(y.shape) #64x10
 
-print(y)
-
+## calculate the probability distribution via softmax function. 
+class Network(nn.Module):
+    def __init__(self):
+        super().__init__()
+        
+        # Inputs to hidden layer linear transformation
+        self.hidden = nn.Linear(784, 256)
+        # Output layer, 10 units - one for each digit
+        self.output = nn.Linear(256, 10)
+        
+        # Define sigmoid activation and softmax output 
+        self.sigmoid = nn.Sigmoid()
+        self.softmax = nn.Softmax(dim=1)
+        
+    def forward(self, x):
+        # Pass the input tensor through each of our operations
+        x = self.hidden(x)
+        x = self.sigmoid(x)
+        x = self.output(x)
+        x = self.softmax(x)
+        
+        return x
