@@ -12,4 +12,9 @@ class MyCell(torch.nn.Module):
 my_cell = MyCell()
 x = torch.rand(3, 4)
 h = torch.rand(3, 4)
-print(my_cell(x, h))
+## torch script model
+traced_cell = torch.jit.trace(my_cell, (x, h))
+print(traced_cell)
+traced_cell(x, h) #the result should be the same as my_cell(x,h)
+# print(traced_cell.graph)
+print(traced_cell.code)
