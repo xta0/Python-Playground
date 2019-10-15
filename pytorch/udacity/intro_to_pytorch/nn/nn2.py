@@ -3,8 +3,6 @@
 import torch
 from torch import nn
 
-
-import torch.nn.functional as F
 class Network2(nn.Module):
     def __init__(self):
         super().__init__()
@@ -15,14 +13,21 @@ class Network2(nn.Module):
         
     def forward(self, x):
         # Hidden layer with sigmoid activation
-        x = F.sigmoid(self.hidden(x))
+        x = torch.sigmoid(self.hidden(x))
         # Output layer with softmax activation
-        x = F.softmax(self.output(x), dim=1)
+        x = torch.softmax(self.output(x), dim=1)
         
         return x
 
 # Create the network and look at it's text representation
-model = Network()
+model = Network2()
 output = model.forward(torch.ones(64,784))
-model.save("model.pt")
 print(output)
+
+# save model to torchscript
+model.eval()
+example = torch.rand(64,784)
+traced_script_module = torch.jit.trace(model, example)
+traced_script_module.save("model.pt")
+
+

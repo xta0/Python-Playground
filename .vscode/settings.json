@@ -2,5 +2,5 @@
     "python.linting.pylintEnabled": false,
     "python.linting.enabled": true,
     "python.linting.pylintPath": "${workspace}",
-    "python.pythonPath": "env/bin/python"
+    "python.pythonPath": "/Users/taox/anaconda3/bin/python"
 }
