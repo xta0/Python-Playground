@@ -3,7 +3,7 @@
 import torch
 from torch import nn
 
-class Network2(nn.Module):
+class Network(nn.Module):
     def __init__(self):
         super().__init__()
         # Inputs to hidden layer linear transformation
@@ -20,14 +20,14 @@ class Network2(nn.Module):
         return x
 
 # Create the network and look at it's text representation
-model = Network2()
+model = Network()
 output = model.forward(torch.ones(64,784))
 print(output)
 
 # save model to torchscript
-model.eval()
-example = torch.rand(64,784)
-traced_script_module = torch.jit.trace(model, example)
-traced_script_module.save("model.pt")
+# model.eval()
+# example = torch.rand(64,784)
+# traced_script_module = torch.jit.trace(model, example)
+# traced_script_module.save("model.pt")
 
 
