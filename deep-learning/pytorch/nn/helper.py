@@ -48,6 +48,7 @@ def imshow(image, ax=None, title=None, normalize=True):
     ax.tick_params(axis='both', length=0)
     ax.set_xticklabels('')
     ax.set_yticklabels('')
+    plt.show()
 
     return ax
 
@@ -69,7 +70,7 @@ def view_classify(img, ps, version="MNIST"):
     '''
     ps = ps.data.numpy().squeeze()
 
-    fig, (ax1, ax2) = plt.subplots(figsize=(6,9), ncols=2)
+    fig, (ax1, ax2) = plt.subplots(ncols=2)
     ax1.imshow(img.resize_(1, 28, 28).numpy().squeeze())
     ax1.axis('off')
     ax2.barh(np.arange(10), ps)
@@ -92,3 +93,4 @@ def view_classify(img, ps, version="MNIST"):
     ax2.set_xlim(0, 1.1)
 
     plt.tight_layout()
+    plt.show()
