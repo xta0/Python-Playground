@@ -1,3 +1,4 @@
 F_MNIST_data/
+cifar10/
 *.pk
 *.pt
