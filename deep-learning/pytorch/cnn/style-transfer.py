@@ -20,7 +20,7 @@ for param in vgg.parameters():
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 vgg.to(device)
 
-def load_image(img_path, max_size=400, shape=None):
+def load_image(img_path, max_size=225, shape=None):
     ''' Load in and transform an image, making sure the image
        is <= 400 pixels in the x-y dims.'''
     image = Image.open(img_path).convert('RGB')
@@ -60,7 +60,8 @@ fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(20, 10))
 # content and style ims side-by-side
 ax1.imshow(im_convert(content))
 ax2.imshow(im_convert(style))
-plt.show()
+# plt.show()
+fig.savefig('before_train.png')
 
 def get_features(image, model, layers = None):
     if layers is None:
@@ -104,20 +105,19 @@ target = content.clone().requires_grad_(True).to(device)
 
 # Loss and Weights
 alpha = 1
-beta  = 1e4
-style_weights = {'conv1_1': 1.,
-                 'conv2_1': 0.75,
+beta  = 1e6
+style_weights = {'conv1_1': 0.2,
+                 'conv2_1': 0.2,
                  'conv3_1': 0.2,
                  'conv4_1': 0.2,
                  'conv5_1': 0.2}
 
 # Perform Gradient Descent
 show_every = 400
-
 optimizer = optim.Adam([target], lr=0.003)
 steps = 2000
-
 total_losses = []
+t = time.time()
 for ii in range(1, steps+1):
     t1 = time.time()
     target_features = get_features(target, vgg)
@@ -130,8 +130,8 @@ for ii in range(1, steps+1):
         target_gram = gram_matrix(target_feature)
         _,c,h,w = target_feature.shape
         style_gram = style_grams[layer]
-        layer_style_loss = style_weights[layer] * torch.mean((target_gram - style_gram)**2)
-        style_loss += layer_style_loss/((2*c*h*w)**2)
+        layer_style_loss = torch.mean((target_gram - style_gram)**2) / ((2*c*h*w)**2)
+        style_loss += style_weights[layer] * layer_style_loss
     #total loss
     total_loss = alpha * content_loss + beta * style_loss
     total_losses.append(total_loss)
@@ -141,22 +141,31 @@ for ii in range(1, steps+1):
     total_loss.backward()
     optimizer.step()
 
-    # if ii % show_every == 0:
-        # print('Total loss: ', total_loss.item())
-        # plt.imshow(im_convert(target))
+    if ii % show_every == 0:
+        print('Total loss: ', total_loss.item())
+        fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(20, 10))
+        ax1.imshow(im_convert(content))
+        ax2.imshow(im_convert(target))
         # plt.show()
+        fig.savefig(f"{ii}.png")
+        
 
     t2 = time.time()-t1
     print(f"epoch: {ii}, time:{t2}, total_loss:{total_loss}")
 
+training_time = time.time()-t
+print(f"Done. Training time: {training_time}")
 # display content and final, target image
-fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(20, 10))
-ax1.imshow(im_convert(content))
-ax2.imshow(im_convert(target))
-plt.show()
+# fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(20, 10))
+# ax1.imshow(im_convert(content))
+# ax2.imshow(im_convert(target))
+# # plt.show()
+# fig.savefig("result.png")
 
 # draw total_loss
 plt.plot(total_losses, label='Training loss')
 plt.legend(frameon=False)
-plt.show()
+# plt.show()
+fig = plt.figure()
+fig.savefig("train_loss.png")
     
