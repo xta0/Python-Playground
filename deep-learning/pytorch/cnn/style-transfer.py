@@ -11,7 +11,6 @@ from torchvision import transforms, models
 
 # get the "features" portion of VGG19 (we will not need the "classifier" portion)
 vgg = models.vgg19(pretrained=True).features
-print(vgg)
 
 # freeze all VGG parameters since we're only optimizing the target image
 for param in vgg.parameters():
@@ -60,7 +59,6 @@ fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(20, 10))
 # content and style ims side-by-side
 ax1.imshow(im_convert(content))
 ax2.imshow(im_convert(style))
-# plt.show()
 fig.savefig('before_train.png')
 
 def get_features(image, model, layers = None):
@@ -146,7 +144,6 @@ for ii in range(1, steps+1):
         fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(20, 10))
         ax1.imshow(im_convert(content))
         ax2.imshow(im_convert(target))
-        # plt.show()
         fig.savefig(f"{ii}.png")
         
 
@@ -155,17 +152,10 @@ for ii in range(1, steps+1):
 
 training_time = time.time()-t
 print(f"Done. Training time: {training_time}")
-# display content and final, target image
-# fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(20, 10))
-# ax1.imshow(im_convert(content))
-# ax2.imshow(im_convert(target))
-# # plt.show()
-# fig.savefig("result.png")
 
 # draw total_loss
 plt.plot(total_losses, label='Training loss')
 plt.legend(frameon=False)
-# plt.show()
 fig = plt.figure()
 fig.savefig("train_loss.png")
     
