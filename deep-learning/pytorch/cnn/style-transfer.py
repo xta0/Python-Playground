@@ -19,7 +19,7 @@ for param in vgg.parameters():
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 vgg.to(device)
 
-def load_image(img_path, max_size=225, shape=None):
+def load_image(img_path, max_size=612, shape=None):
     ''' Load in and transform an image, making sure the image
        is <= 400 pixels in the x-y dims.'''
     image = Image.open(img_path).convert('RGB')
@@ -52,8 +52,8 @@ def im_convert(tensor):
 
     return image
 
-content = load_image("./octopus.jpg").to(device)
-style   = load_image("./hockney.jpg",shape=content.shape[-2:]).to(device)
+content = load_image("./ian-liu.jpeg").to(device)
+style   = load_image("./starry_night_van_gogh.jpg",shape=content.shape[-2:]).to(device)
 
 fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(20, 10))
 # content and style ims side-by-side
