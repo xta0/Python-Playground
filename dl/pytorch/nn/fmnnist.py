@@ -99,3 +99,6 @@ plt.show()
 # ps = torch.exp(output)
 # print(ps)
 # helper.view_classify(img, ps, version='Fashion')
+
+# Save parameters
+print("The state dict keys: \n\n", model.state_dict().keys())
