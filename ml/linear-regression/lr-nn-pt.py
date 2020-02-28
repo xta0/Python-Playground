@@ -1,6 +1,9 @@
 import torch
 import torch.nn as nn
 import torch.optim as optim
+import os
+
+os.environ['KMP_DUPLICATE_LIB_OK']='True'
 
 t_y = [0.5, 14.0, 15.0, 28.0, 11.0, 8.0, 3.0, -4.0, 6.0, 13.0, 21.0]
 t_x = [35.7, 55.9, 58.2, 81.9, 56.3, 48.9, 33.9, 21.8, 48.4, 60.4, 68.4]
@@ -43,7 +46,7 @@ def train_loop(epochs, learning_rate, loss_fn,x, y):
         print(f'Epoch: {epoch}, Loss: {float(loss)}')
 
 train_loop(5000, 1e-3, nn.MSELoss(),t_xn, t_y)
-#print("params:", list(linear_model.parameters()))
+print("params:", list(seq_model.parameters()))
 
 from matplotlib import pyplot as plt
 t_range = torch.arange(20., 90.).unsqueeze(1)
@@ -52,3 +55,7 @@ plt.plot(t_x.numpy(), t_y.numpy(),'o')
 plt.plot(t_range.numpy(), seq_model(0.1*t_range).detach().numpy(),'c-')
 plt.plot(t_x.numpy(), seq_model(t_xn).detach().numpy(),'kx')
 plt.show()
+
+#save model
+script_model = torch.jit.trace(seq_model, t_xn)
+script_model.save("model.pt")

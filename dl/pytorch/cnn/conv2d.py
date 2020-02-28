@@ -1,6 +1,8 @@
 import torch 
 import torch.nn as nn
 
+## conv2d
+
 #ncwh
 x = torch.randn(1,3,32,32)
 #input_channel, output_channel, kernel size, padding
