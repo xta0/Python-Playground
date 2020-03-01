@@ -23,11 +23,14 @@ testset = datasets.MNIST('./MNIST_data/', download=True, train=False, transform=
 testloader = torch.utils.data.DataLoader(testset, batch_size=64, shuffle=True)
 
 # Raw dataset
-rawset = datasets.MNIST('./MNIST_data/')
 cn = 30
+rawset = datasets.MNIST('./MNIST_data/')
 for idx, (img, label) in enumerate(rawset):
-    if idx < 30:
-        img.save(f'{idx}_{label}.jpg')
+    if idx < cn:
+        img.save(f'./tests/{idx}_{label}.jpg')
+        t = transform(img) #[1,28,28]
+        t = t.view(t.shape[0],-1) #[1, 784]
+        np.savetxt(f'./tests/{idx}_{label}.txt', [t.numpy()], delimiter=',')
     
 # Construct NN
 class Classifier(nn.Module):
@@ -44,19 +47,18 @@ class Classifier(nn.Module):
         x = x.view(x.shape[0], -1)
         # Now with dropout
         x = self.dropout(F.relu(self.fc1(x)))
-        # x = self.dropout(F.relu(self.fc2(x)))
         # output so no dropout here
-        x = F.log_softmax(self.fc2(x), dim=1)
+        x = F.softmax(self.fc2(x), dim=1)
 
         return x
 
 model = Classifier()
 print(model)
-dataiter = iter(testloader)
-images, labels = dataiter.next()
-img = images[3].view(images[1].shape[0], -1)
-# img.save('input-sample.jpg')
-np.savetxt('input-sample.txt',[img.view(-1).numpy()],delimiter=',')
+# dataiter = iter(testloader)
+# images, labels = dataiter.next()
+# img = images[3].view(images[1].shape[0], -1)
+# # img.save('input-sample.jpg')
+# np.savetxt('input-sample.txt',[img.view(-1).numpy()],delimiter=',')
 # print(img.shape) # [1, 784]
 # ps = torch.exp(model(img))
 # helper.view_classify(img, ps, version="MNIST")
@@ -101,17 +103,8 @@ plt.plot(test_losses, label='Validation loss')
 plt.legend(frameon=False)
 plt.show()
 
-dataiter = iter(testloader)
-images, labels = dataiter.next()
-img = images[1].view(images[1].shape[0], -1)
-output = model(img)
-print(output.shape)
-ps = torch.exp(output)
-print(ps)
-helper.view_classify(img, ps, version='MNIST')
-
 # save the model
-model.half()
+model.half() #save fp16
 torch.save(model.state_dict(), 'model_mnist.pt')
 
 # Save parameters
@@ -120,19 +113,19 @@ print("The state dict keys: \n\n", state.keys())
 
 fc1_w = state["fc1.weight"] 
 fc1_b = state["fc1.bias"]
-print(fc1_w.shape) # 500x1024
-print(fc1_b.shape) #[500]
+print(fc1_w.shape) # [784, 256]
+print(fc1_b.shape) # [256]
 
 fc2_w = state["fc2.weight"] 
 fc2_b = state["fc2.bias"]
-print(fc2_w.shape) # 10x500
-print(fc2_b.shape) #[10]
+print(fc2_w.shape) # [256, 10]
+print(fc2_b.shape) # [10]
 
 # save all those weights and bias
-np.savetxt('mpscnn_mnist_fc1_w.txt', [fc1_w.view(-1).numpy()],delimiter=',')
-np.savetxt('mpscnn_mnist_fc1_b.txt', [fc1_b.numpy()],delimiter=',')
-np.savetxt('mpscnn_mnist_fc2_w.txt', [fc2_w.view(-1).numpy()],delimiter=',')
-np.savetxt('mpscnn_mnist_fc2_b.txt', [fc2_b.numpy()],delimiter=',')
+np.savetxt('./params/fc1_W.txt', [fc1_w.view(-1).numpy()],delimiter=',')
+np.savetxt('./params/fc1_b.txt', [fc1_b.numpy()],delimiter=',')
+np.savetxt('./params/fc2_W.txt', [fc2_w.view(-1).numpy()],delimiter=',')
+np.savetxt('./params/fc2_b.txt', [fc2_b.numpy()],delimiter=',')
 
 
 
