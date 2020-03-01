@@ -9,7 +9,6 @@ import sys
 sys.path.append('../')
 import helper
 
-
 os.environ['KMP_DUPLICATE_LIB_OK']='True'
 
 # Define a transform to normalize the data
@@ -23,6 +22,13 @@ trainloader = torch.utils.data.DataLoader(trainset, batch_size=64, shuffle=True)
 testset = datasets.MNIST('./MNIST_data/', download=True, train=False, transform=transform)
 testloader = torch.utils.data.DataLoader(testset, batch_size=64, shuffle=True)
 
+# Raw dataset
+rawset = datasets.MNIST('./MNIST_data/')
+cn = 30
+for idx, (img, label) in enumerate(rawset):
+    if idx < 30:
+        img.save(f'{idx}_{label}.jpg')
+    
 # Construct NN
 class Classifier(nn.Module):
     def __init__(self):
@@ -49,7 +55,8 @@ print(model)
 dataiter = iter(testloader)
 images, labels = dataiter.next()
 img = images[3].view(images[1].shape[0], -1)
-np.savetxt('input-grayscale-img.txt',[img.view(-1).numpy()],delimiter=',')
+# img.save('input-sample.jpg')
+np.savetxt('input-sample.txt',[img.view(-1).numpy()],delimiter=',')
 # print(img.shape) # [1, 784]
 # ps = torch.exp(model(img))
 # helper.view_classify(img, ps, version="MNIST")
