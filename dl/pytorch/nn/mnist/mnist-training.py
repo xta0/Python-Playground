@@ -23,14 +23,14 @@ testset = datasets.MNIST('./MNIST_data/', download=True, train=False, transform=
 testloader = torch.utils.data.DataLoader(testset, batch_size=64, shuffle=True)
 
 # Raw dataset
-cn = 30
+cn = 64
 rawset = datasets.MNIST('./MNIST_data/')
 for idx, (img, label) in enumerate(rawset):
     if idx < cn:
-        img.save(f'./tests/{idx}_{label}.jpg')
+        # img.save(f'./tests/{idx}_{label}.jpg')
         t = transform(img) #[1,28,28]
-        t = t.view(t.shape[0],-1) #[1, 784]
-        np.savetxt(f'./tests/{idx}_{label}.txt', [t.numpy()], delimiter=',')
+        t = t.view(-1) # flat the tensor to 1d array -> [784]
+        np.savetxt(f'./tests/{idx}_{label}.txt', [t.view(-1).numpy()], delimiter=',')
     
 # Construct NN
 class Classifier(nn.Module):

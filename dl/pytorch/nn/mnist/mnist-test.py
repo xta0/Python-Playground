@@ -38,7 +38,7 @@ print(model)
 
 # Raw dataset
 rawset = datasets.MNIST('./MNIST_data/')
-cnt = 30
+cnt = 64
 cn  = 0
 transform = transforms.Compose([transforms.ToTensor(),
                                 transforms.Normalize((0.5,), (0.5,))])
