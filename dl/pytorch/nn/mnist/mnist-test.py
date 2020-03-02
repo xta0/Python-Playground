@@ -27,7 +27,7 @@ class Classifier(nn.Module):
         x = self.dropout(F.relu(self.fc1(x)))
         # x = self.dropout(F.relu(self.fc2(x)))
         # output so no dropout here
-        x = F.softmax(self.fc2(x),dim=1)
+        x = F.log_softmax(self.fc2(x),dim=1)
 
         return x
 

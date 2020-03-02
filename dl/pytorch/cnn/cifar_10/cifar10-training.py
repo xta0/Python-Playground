@@ -43,8 +43,7 @@ data_path  = './cifar10/'
 train_data = datasets.CIFAR10(data_path, train=True, download=True,transform = transform)
 test_data  = datasets.CIFAR10(data_path, train=False, download=True, transform = transform)
 
-num_train = len(train_data)
-print(num_train) #50000
+num_train = len(train_data) #50000
 indices = list(range(num_train))
 np.random.shuffle(indices)
 split_index = int(np.floor(valid_size * num_train))
@@ -63,7 +62,7 @@ test_loader = torch.utils.data.DataLoader(test_data, batch_size=batch_size)
 classes = ['airplane', 'automobile', 'bird', 'cat', 'deer','dog', 'frog', 'horse', 'ship', 'truck']
 
 # visualize training data
-images,labels = iter(train_loader).next() #images: [20, 3, 32, 32], label:[20]
+# images,labels = iter(train_loader).next() #images: [20, 3, 32, 32], label:[20]
 # showSamples(images,labels,classes)
 
 class Classifier(nn.Module):
@@ -149,6 +148,43 @@ plt.plot(valid_loss_vec, label='Validation loss')
 plt.legend(frameon=False)
 plt.show()
 
-# Test
-model.load_state_dict(torch.load('model_cifar10.pt'))
+# Save params
+model.half() #save "fp16"
+state = model.state_dict() #ordered dict
+conv1_w = state["conv1.weight"]
+conv1_b = state["conv1.bias"]
+print(conv1_w.shape) # NCWH -> 16x3x3x3 
+print(conv1_b.shape) #[16]
+
+conv2_w = state["conv2.weight"]
+conv2_b = state["conv2.bias"]
+print(conv2_w.shape) # NCWH -> 32x16x3x3 
+print(conv2_b.shape) #[32]
+
+conv3_w = state["conv3.weight"]
+conv3_b = state["conv3.bias"]
+print(conv3_w.shape) # NCWH -> 64x32x3x3 
+print(conv3_b.shape) #[64]
+
+fc1_w = state["fc1.weight"] 
+fc1_b = state["fc1.bias"]
+print(fc1_w.shape) # 500x1024
+print(fc1_b.shape) #[500]
+
+fc2_w = state["fc2.weight"] 
+fc2_b = state["fc2.bias"]
+print(fc2_w.shape) # 10x500
+print(fc2_b.shape) #[10]
+
+# save all those weights and bias
+np.savetxt('./params/conv1_W.txt', [conv1_w.permute(0,2,3,1).contiguous().view(-1).numpy()],delimiter=',')
+np.savetxt('./params/conv1_b.txt', [conv1_b.numpy()],delimiter=',')
+np.savetxt('./params/conv2_W.txt', [conv2_w.permute(0,2,3,1).contiguous().view(-1).numpy()],delimiter=',')
+np.savetxt('./params/conv2_b.txt', [conv2_b.numpy()],delimiter=',')
+np.savetxt('./params/conv3_W.txt', [conv3_w.permute(0,2,3,1).contiguous().view(-1).numpy()],delimiter=',')
+np.savetxt('./params/conv3_b.txt', [conv3_b.numpy()],delimiter=',')
+np.savetxt('./params/fc1_W.txt', [fc1_w.view(-1).numpy()],delimiter=',')
+np.savetxt('./params/fc1_b.txt', [fc1_b.numpy()],delimiter=',')
+np.savetxt('./params/fc2_W.txt', [fc2_w.view(-1).numpy()],delimiter=',')
+np.savetxt('./params/fc2_b.txt', [fc2_b.numpy()],delimiter=',')
 
