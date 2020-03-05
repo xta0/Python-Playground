@@ -13,7 +13,7 @@ os.environ['KMP_DUPLICATE_LIB_OK']='True'
 
 # Define a transform to normalize the data
 transform = transforms.Compose([transforms.ToTensor(),
-                                transforms.Normalize((0.5,), (0.5,))])
+                                transforms.Normalize((0.4915, 0.4823, 0.4468), (0.2470, 0.2435, 0.2616))])
 # Download and load the training data
 trainset = datasets.MNIST('./MNIST_data/', download=True, train=True, transform=transform)
 trainloader = torch.utils.data.DataLoader(trainset, batch_size=64, shuffle=True)

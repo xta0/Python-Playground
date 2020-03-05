@@ -19,7 +19,7 @@ transform = transforms.Compose([
 ])
 
 batch_size = 20
-data_path  = './cifar10/'
+data_path  = './cifar10_data/'
 test_data  = datasets.CIFAR10(data_path, train=False, download=True, transform = transform)
 test_loader = torch.utils.data.DataLoader(test_data, batch_size=batch_size)
 # specify the image classes

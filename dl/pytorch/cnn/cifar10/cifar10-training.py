@@ -37,9 +37,9 @@ transform = transforms.Compose([
     transforms.RandomHorizontalFlip(),
     transforms.RandomRotation(10),
     transforms.ToTensor(),
-    transforms.Normalize((0.5,0.5,0.5),(0.5,0.5,0.5))
+    transforms.Normalize((0.4915, 0.4823, 0.4468), (0.2470, 0.2435, 0.2616))
 ])
-data_path  = './cifar10/'
+data_path  = './cifar10_data/'
 train_data = datasets.CIFAR10(data_path, train=True, download=True,transform = transform)
 test_data  = datasets.CIFAR10(data_path, train=False, download=True, transform = transform)
 
@@ -142,7 +142,7 @@ for epoch in range(1,epochs):
             torch.save(model.state_dict(), 'model_cifar10.pt')
             valid_loss_min = valid_loss
 
-import matplotlib.pyplot as plt
+# Plot the train error
 plt.plot(train_loss_vec, label='Training loss')
 plt.plot(valid_loss_vec, label='Validation loss')
 plt.legend(frameon=False)
@@ -153,17 +153,17 @@ model.half() #save "fp16"
 state = model.state_dict() #ordered dict
 conv1_w = state["conv1.weight"]
 conv1_b = state["conv1.bias"]
-print(conv1_w.shape) # NCWH -> 16x3x3x3 
+print(conv1_w.shape) # NCHW -> 16x3x3x3 
 print(conv1_b.shape) #[16]
 
 conv2_w = state["conv2.weight"]
 conv2_b = state["conv2.bias"]
-print(conv2_w.shape) # NCWH -> 32x16x3x3 
+print(conv2_w.shape) # NCHW -> 32x16x3x3 
 print(conv2_b.shape) #[32]
 
 conv3_w = state["conv3.weight"]
 conv3_b = state["conv3.bias"]
-print(conv3_w.shape) # NCWH -> 64x32x3x3 
+print(conv3_w.shape) # NCHW -> 64x32x3x3 
 print(conv3_b.shape) #[64]
 
 fc1_w = state["fc1.weight"] 
@@ -177,6 +177,8 @@ print(fc2_w.shape) # 10x500
 print(fc2_b.shape) #[10]
 
 # save all those weights and bias
+# MPSCNN requires [oC kH kW iC] -> NHWC
+# PyTorch is NCHW
 np.savetxt('./params/conv1_W.txt', [conv1_w.permute(0,2,3,1).contiguous().view(-1).numpy()],delimiter=',')
 np.savetxt('./params/conv1_b.txt', [conv1_b.numpy()],delimiter=',')
 np.savetxt('./params/conv2_W.txt', [conv2_w.permute(0,2,3,1).contiguous().view(-1).numpy()],delimiter=',')
