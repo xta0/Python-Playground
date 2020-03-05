@@ -37,6 +37,7 @@ class Classifier(nn.Module):
         x = F.log_softmax(x, dim=1)
         return x
 
+
 model = Classifier()
 model.eval()
 print(model)
@@ -53,54 +54,46 @@ transform = transforms.Compose([
     transforms.Normalize((0.4915, 0.4823, 0.4468), (0.2470, 0.2435, 0.2616))
 ])
 
-sample  = rawset[0] #(img, label)
-img     = sample[0]
-l = sample[1]
-    
-    # ps = torch.exp(output)
-    # p, clz = ps.topk(1, dim=1)
-    # print(p,clz)
-    # for idx, (img, label) in enumerate(rawset):
-        # t = transform(img)
-        # print(t.shape)
+# sample  = rawset[0] #(img, label)
+# img     = sample[0]
+# l = sample[1]
 
 
+def saveToMPSImage(img,label,idx):
+    print(img)
+    padding = torch.ones([1,32,32])
+    rgba    = torch.cat((img,padding),0) #[4,32,32] [R][G][B][A]
+    # print(rgba.shape)
+    # mpsi    = rgba.permute(1,2,0) #[32,32,4] [RGBA,RGBA,RGBA,...]
+    # plt.imshow(mpsi)
+    # plt.show()
+    mpsi    = mpsi.contiguous().view(-1).numpy()
+    # print(mpsi.shape)
+    np.savetxt(f'./mps/{idx}_{label}.txt', [mpsi], delimiter=',')
 
+# load datasets 
+rawset = datasets.CIFAR10('./cifar10_data/')
 
-# def saveToMPSImage(img,label,idx):
-#     padding = torch.ones([1,32,32])
-#     rgba    = torch.cat((img,padding),0) #[4,32,32] [R][G][B][A]
-#     # print(rgba.shape)
-#     mpsi    = rgba.permute(1,2,0) #[32,32,4] [RGBA,RGBA,RGBA,...]
-#     # plt.imshow(imgt)
-#     # plt.show()
-#     mpsi    = mpsi.contiguous().view(-1).numpy()
-#     # print(mpsi.shape)
-#     np.savetxt(f'./mps/{idx}_{label}.txt', [mpsi], delimiter=',')
+transform = transforms.Compose([
+    transforms.ToTensor(),
+    transforms.Normalize((0.4915, 0.4823, 0.4468), (0.2470, 0.2435, 0.2616))
+])
 
-# # load datasets 
-# rawset = datasets.CIFAR10('./cifar10_data/')
-
-# transform = transforms.Compose([
-#     transforms.ToTensor(),
-#     transforms.Normalize((0.4915, 0.4823, 0.4468), (0.2470, 0.2435, 0.2616))
-# ])
-
-# cnt = 64
-# cn  = 0
-# with torch.no_grad():
-#     for idx, (img, label) in enumerate(rawset):
-#         if idx < cnt:
-#             t = transform(img) #[1,28,28]
-#             saveToMPSImage(t)
-#             t = t.unsqueeze(0)
-#             output = model(t)
-#             ps = torch.exp(output)
-#             p, idx = ps.topk(1, dim=1)
-#             clz = clz.view(-1).item()
-#             if clz == label:
-#                 print(f"True: ( output:{clz}, label:{label} )")
-#                 cn += 1
-#             else:
-#                 print(f"False: ( output:{clz}, label:{label} )")
-#     print(f"accuracy: {float(cn)/float(cnt)}")
+cnt = 1
+cn  = 0
+with torch.no_grad():
+    for idx, (img, label) in enumerate(rawset):
+        if idx < cnt:
+            t = transform(img) #[1,28,28]
+            saveToMPSImage(t,label,idx)
+            t = t.unsqueeze(0)
+            output = model(t)
+            ps = torch.exp(output)
+            p, clz = ps.topk(1, dim=1)
+            clz = clz.item()
+            if clz == label:
+                print(f"True: ( output:{clz}, label:{label} )")
+                cn += 1
+            else:
+                print(f"False: ( output:{clz}, label:{label} )")
+    print(f"accuracy: {float(cn)/float(cnt)}")
