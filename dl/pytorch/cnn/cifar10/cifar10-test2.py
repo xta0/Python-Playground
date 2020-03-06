@@ -64,7 +64,7 @@ def saveToMPSImage(img,label,idx):
     padding = torch.ones([1,32,32])
     rgba    = torch.cat((img,padding),0) #[4,32,32] [R][G][B][A]
     # print(rgba.shape)
-    # mpsi    = rgba.permute(1,2,0) #[32,32,4] [RGBA,RGBA,RGBA,...]
+    mpsi    = rgba.permute(1,2,0) #[32,32,4] [RGBA,RGBA,RGBA,...]
     # plt.imshow(mpsi)
     # plt.show()
     mpsi    = mpsi.contiguous().view(-1).numpy()

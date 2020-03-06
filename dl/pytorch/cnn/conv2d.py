@@ -1,12 +1,35 @@
 import torch 
 import torch.nn as nn
+import numpy as np
 
-## conv2d
-
-#ncwh
-x = torch.randn(1,3,32,32)
-#input_channel, output_channel, kernel size, padding
+#conv2d(input_channel, output_channel, kernel size, padding)
 #(n+2p-f+1)x(n+2p-f+1)
-conv1 = nn.Conv2d(3,16,3,1)
-y = conv1(x)
-print(y.shape) #(1,16,30,30) nchw
+
+def saveToMPSImage(x):
+    padding = torch.ones([1,2,2])
+    x       = torch.cat((x,padding),0) #[4,2,2] 
+    x       = x.permute(1,2,0) #[32,32,4] [RGBA,RGBA,RGBA,...]
+    x       = x.contiguous().view(-1).numpy()
+    print(f"mps: {x}")
+    np.savetxt('./x.txt',[x], delimiter=',')    
+    
+x  = torch.randn(3,2,2)
+saveToMPSImage(x)
+x  = x.unsqueeze(0) #[1,3,2,2]
+
+# input: [1,3,2,2]
+print('---------------------')
+conv    = nn.Conv2d(3,2,2,padding=0,bias=False) #ic=3, oc=2, kernel size =2, padding=1
+w       = conv.weight
+print(w.shape)
+wp      = w.permute(0,2,3,1).contiguous().view(-1).detach().numpy()
+print(wp)
+np.savetxt('./conv_W.txt',[wp], delimiter=',')
+# b       = conv.bias.half()
+# np.savetxt('./conv_b.txt',[b.detach().numpy()], delimiter=',')
+print('---------------------')
+y       = conv(x)
+print(y.shape)
+y       = y.view(-1).detach().numpy()
+print(y)
+np.savetxt('./y.txt',[y], delimiter=',')

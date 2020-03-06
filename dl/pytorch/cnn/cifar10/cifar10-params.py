@@ -67,25 +67,13 @@ print(fc2_w.shape) # 10x500
 print(fc2_b.shape) #[10]
 
 # save all those weights and bias
-# MPSCNN requires [oC kH kW iC] -> NHWC
+# MPSCNN requires weights to be [oC kH kW iC] -> NHWC
 # PyTorch is NCHW
-def convertToNHWC(t,path):
-    x = t.numpy()
-    x = np.swapaxes(t,1,2) # NCHW -> NHCW
-    x = np.swapaxes(t,2,3) # NHCW -> NHWC
-    np.savetxt(path, [t], delimiter=',')
-
-
-# np.savetxt('./params/conv1_W.txt', [conv1_w.permute(0,2,3,1).contiguous().view(-1).numpy()],delimiter=',')
-convertToNHWC(conv1_w,'./params/conv1_W.txt')
+np.savetxt('./params/conv1_W.txt', [conv1_w.permute(0,2,3,1).contiguous().view(-1).numpy()],delimiter=',')
 np.savetxt('./params/conv1_b.txt', [conv1_b.numpy()],delimiter=',')
-
-# np.savetxt('./params/conv2_W.txt', [conv2_w.permute(0,2,3,1).contiguous().view(-1).numpy()],delimiter=',')
-convertToNHWC(conv2_w,'./params/conv2_W.txt')
+np.savetxt('./params/conv2_W.txt', [conv2_w.permute(0,2,3,1).contiguous().view(-1).numpy()],delimiter=',')
 np.savetxt('./params/conv2_b.txt', [conv2_b.numpy()],delimiter=',')
-
-convertToNHWC(conv3_w,'./params/conv3_W.txt')
-# np.savetxt('./params/conv3_W.txt', [conv3_w.permute(0,2,3,1).contiguous().view(-1).numpy()],delimiter=',')
+np.savetxt('./params/conv3_W.txt', [conv3_w.permute(0,2,3,1).contiguous().view(-1).numpy()],delimiter=',')
 np.savetxt('./params/conv3_b.txt', [conv3_b.numpy()],delimiter=',')
 np.savetxt('./params/fc1_W.txt', [fc1_w.view(-1).numpy()],delimiter=',')
 np.savetxt('./params/fc1_b.txt', [fc1_b.numpy()],delimiter=',')
