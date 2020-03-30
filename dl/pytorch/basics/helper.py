@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
+import torch
 from torch import nn, optim
 from torch.autograd import Variable
 
@@ -64,12 +65,13 @@ def view_recon(img, recon):
         ax.axis('off')
         ax.set_adjustable('box-forced')
 
+
 def view_classify(img, ps, version="MNIST"):
     ''' Function for viewing an image and it's predicted classes.
     '''
     ps = ps.data.numpy().squeeze()
 
-    fig, (ax1, ax2) = plt.subplots(figsize=(6,9), ncols=2)
+    fig, (ax1, ax2) = plt.subplots(figsize=(6, 9), ncols=2)
     ax1.imshow(img.resize_(1, 28, 28).numpy().squeeze())
     ax1.axis('off')
     ax2.barh(np.arange(10), ps)
@@ -78,17 +80,52 @@ def view_classify(img, ps, version="MNIST"):
     if version == "MNIST":
         ax2.set_yticklabels(np.arange(10))
     elif version == "Fashion":
-        ax2.set_yticklabels(['T-shirt/top',
-                            'Trouser',
-                            'Pullover',
-                            'Dress',
-                            'Coat',
-                            'Sandal',
-                            'Shirt',
-                            'Sneaker',
-                            'Bag',
-                            'Ankle Boot'], size='small');
+        ax2.set_yticklabels([
+            'T-shirt/top', 'Trouser', 'Pullover', 'Dress', 'Coat', 'Sandal',
+            'Shirt', 'Sneaker', 'Bag', 'Ankle Boot'
+        ],
+                            size='small')
     ax2.set_title('Class Probability')
     ax2.set_xlim(0, 1.1)
 
     plt.tight_layout()
+
+
+# def verify(p1, p2, atol=0.0045):
+def verify(p1, p2, atol=0.01):
+    y1 = np.loadtxt(p1, delimiter=',')
+    y2 = np.loadtxt(p2, delimiter=',')
+    print(y1.shape)
+    print(y2.shape)
+    return np.allclose(y1, y2, atol=atol)
+
+
+# input [C,H,W]
+def convertToMPSImage(x):
+    shape = x.shape
+    print("input shape: ", shape)
+    slices = []
+    n = int((shape[0] + 3) / 4)  # slices
+    l = int(shape[0])
+    d = l
+    if l%4 != 0:
+        d = (int(l / 4) + 1) * 4
+    print("(slice, c, dst_c)", n, l, d)
+    for i in range(n):
+        if i * 4 + 4 < l:
+            s = x[i * 4:i * 4 + 4]
+            slices.append(s)
+        else:
+            # add padding
+            padding = torch.zeros(1, shape[1], shape[2])
+            s = x[i * 4:shape[0]]
+            while l < d:
+                print("concating")
+                s = torch.cat((s, padding), 0)
+                l = l + 1
+            slices.append(s)
+    # print(slices)
+    # flatten the numpy array
+    slices = [x.permute(1, 2, 0).contiguous().view(-1).detach().numpy() for x in slices]
+    slices = np.concatenate(slices)
+    return slices
