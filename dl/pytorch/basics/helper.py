@@ -103,14 +103,14 @@ def verify(p1, p2, atol=0.01):
 # input [C,H,W]
 def convertToMPSImage(x):
     shape = x.shape
-    print("input shape: ", shape)
+    # print("input shape: ", shape)
     slices = []
     n = int((shape[0] + 3) / 4)  # slices
     l = int(shape[0])
     d = l
     if l%4 != 0:
         d = (int(l / 4) + 1) * 4
-    print("(slice, c, dst_c)", n, l, d)
+    # print("(slice, c, dst_c)", n, l, d)
     for i in range(n):
         if i * 4 + 4 < l:
             s = x[i * 4:i * 4 + 4]

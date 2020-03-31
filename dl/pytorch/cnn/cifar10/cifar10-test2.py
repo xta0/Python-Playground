@@ -17,14 +17,14 @@ classes = ['airplane', 'automobile', 'bird', 'cat', 'deer','dog', 'frog', 'horse
 
 def convertToMPSImage(x):
     shape = x.shape
-    print("input shape: ", shape)
+    # print("input shape: ", shape)
     slices = []
     n = int((shape[0] + 3) / 4)  # slices
     l = int(shape[0])
     d = l
     if l%4 != 0:
         d = (int(l / 4) + 1) * 4
-    print("(slice, c, dst_c)", n, l, d)
+    # print("(slice, c, dst_c)", n, l, d)
     for i in range(n):
         if i * 4 + 4 < l:
             s = x[i * 4:i * 4 + 4]
@@ -34,7 +34,7 @@ def convertToMPSImage(x):
             padding = torch.zeros(1, shape[1], shape[2])
             s = x[i * 4:shape[0]]
             while l < d:
-                print("concating")
+                # print("concating")
                 s = torch.cat((s, padding), 0)
                 l = l + 1
             slices.append(s)
@@ -96,7 +96,7 @@ class Classifier(nn.Module):
         # x = self.pool(F.relu(self.conv2(x)))
         # x = self.pool(F.relu(self.conv3(x))) # [1,64,4,4]
         #flatten the input
-        print(x.shape)
+        # print(x.shape)
         x = x.view(-1,64*4*4)
         x = self.dropout(x)
         x = F.relu(self.fc1(x)) 
@@ -128,23 +128,21 @@ transform = transforms.Compose([
 # img     = sample[0]
 # l = sample[1]
 
-cnt = 1
+cnt = 10
 cn  = 0
 with torch.no_grad():
     for idx, (img, label) in enumerate(rawset):
         if idx < cnt:
             t = transform(img)
-            print(t.shape)
             saveToMPSImage(t,label,idx)
             t = t.unsqueeze(0)
             output = model(t)
             ps = torch.exp(output)
-            print(ps)
             p, clz = ps.topk(1, dim=1)
             clz = clz.item()
             if clz == label:
-                print(f"True: ( output:{clz}, label:{label} )")
+                print(f"True: ( output:{clz}, label:{label}, prob:{p} )")
                 cn += 1
             else:
-                print(f"False: ( output:{clz}, label:{label} )")
+                print(f"False: ( output:{clz}, label:{label}, prob:{p} )")
     print(f"accuracy: {float(cn)/float(cnt)}")
