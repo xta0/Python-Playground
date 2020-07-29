@@ -7,7 +7,6 @@ import os
 import numpy as np
 import sys
 sys.path.append('../')
-import helper
 
 os.environ['KMP_DUPLICATE_LIB_OK']='True'
 
@@ -23,14 +22,14 @@ testset = datasets.MNIST('./MNIST_data/', download=True, train=False, transform=
 testloader = torch.utils.data.DataLoader(testset, batch_size=64, shuffle=True)
 
 # Raw dataset
-cn = 64
-rawset = datasets.MNIST('./MNIST_data/')
-for idx, (img, label) in enumerate(rawset):
-    if idx < cn:
-        # img.save(f'./tests/{idx}_{label}.jpg')
-        t = transform(img) #[1,28,28]
-        t = t.view(-1) # flat the tensor to 1d array -> [784]
-        np.savetxt(f'./tests/{idx}_{label}.txt', [t.view(-1).numpy()], delimiter=',')
+# cn = 64
+# rawset = datasets.MNIST('./MNIST_data/')
+# for idx, (img, label) in enumerate(rawset):
+#     if idx < cn:
+#         # img.save(f'./tests/{idx}_{label}.jpg')
+#         t = transform(img) #[1,28,28]
+#         t = t.view(-1) # flat the tensor to 1d array -> [784]
+#         np.savetxt(f'./tests/{idx}_{label}.txt', [t.view(-1).numpy()], delimiter=',')
     
 # Construct NN
 class Classifier(nn.Module):
@@ -103,29 +102,29 @@ plt.plot(test_losses, label='Validation loss')
 plt.legend(frameon=False)
 plt.show()
 
-# save the model
-model.half() #save fp16
-torch.save(model.state_dict(), 'model_mnist.pt')
+# # save the model
+# model.half() #save fp16
+# torch.save(model.state_dict(), 'model_mnist.pt')
 
-# Save parameters
-state = model.state_dict()
-print("The state dict keys: \n\n", state.keys())
+# # Save parameters
+# state = model.state_dict()
+# print("The state dict keys: \n\n", state.keys())
 
-fc1_w = state["fc1.weight"] 
-fc1_b = state["fc1.bias"]
-print(fc1_w.shape) # [784, 256]
-print(fc1_b.shape) # [256]
+# fc1_w = state["fc1.weight"] 
+# fc1_b = state["fc1.bias"]
+# print(fc1_w.shape) # [784, 256]
+# print(fc1_b.shape) # [256]
 
-fc2_w = state["fc2.weight"] 
-fc2_b = state["fc2.bias"]
-print(fc2_w.shape) # [256, 10]
-print(fc2_b.shape) # [10]
+# fc2_w = state["fc2.weight"] 
+# fc2_b = state["fc2.bias"]
+# print(fc2_w.shape) # [256, 10]
+# print(fc2_b.shape) # [10]
 
-# save all those weights and bias
-np.savetxt('./params/fc1_W.txt', [fc1_w.view(-1).numpy()],delimiter=',')
-np.savetxt('./params/fc1_b.txt', [fc1_b.numpy()],delimiter=',')
-np.savetxt('./params/fc2_W.txt', [fc2_w.view(-1).numpy()],delimiter=',')
-np.savetxt('./params/fc2_b.txt', [fc2_b.numpy()],delimiter=',')
+# # save all those weights and bias
+# np.savetxt('./params/fc1_W.txt', [fc1_w.view(-1).numpy()],delimiter=',')
+# np.savetxt('./params/fc1_b.txt', [fc1_b.numpy()],delimiter=',')
+# np.savetxt('./params/fc2_W.txt', [fc2_w.view(-1).numpy()],delimiter=',')
+# np.savetxt('./params/fc2_b.txt', [fc2_b.numpy()],delimiter=',')
 
 
 
