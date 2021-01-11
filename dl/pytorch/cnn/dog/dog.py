@@ -1,14 +1,13 @@
 import os
 import numpy as np
 import torch
+import torch.nn as nn
 from torchvision import datasets
 import torchvision.transforms as transforms
 
 # check if CUDA is available
 use_cuda = torch.cuda.is_available()
 
-### TODO: Write data loaders for training, validation, and test sets
-## Specify appropriate transforms, and batch_sizes
 from PIL import ImageFile
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 

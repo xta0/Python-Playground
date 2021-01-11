@@ -5,12 +5,11 @@ from torchvision import datasets
 import torchvision.models as models
 import torch.nn as nn
 import torchvision.transforms as transforms
+import torch.optim as optim
 
 # check if CUDA is available
 use_cuda = torch.cuda.is_available()
 
-### TODO: Write data loaders for training, validation, and test sets
-## Specify appropriate transforms, and batch_sizes
 from PIL import ImageFile
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 
@@ -70,8 +69,6 @@ print(model_transfer)
 
 if use_cuda:
     model_transfer = model_transfer.cuda()
-
-import torch.optim as optim
 
 criterion_transfer = torch.nn.CrossEntropyLoss()
 optimizer_transfer = optim.SGD(model_transfer.parameters(), lr=0.01)
@@ -143,10 +140,10 @@ def train(n_epochs, loaders, model, optimizer, criterion, use_cuda, save_path):
 print("use_cuda: ", use_cuda)
 model_transfer = train(10, loaders_transfer, model_transfer,
                        optimizer_transfer, criterion_transfer, use_cuda,
-                       'model_transfer.pth')
+                       'model_transfer.pt')
 
 # load the model that got the best validation accuracy
-model_transfer.load_state_dict(torch.load('model_transfer.pth'))
+model_transfer.load_state_dict(torch.load('model_transfer.pt'))
 
 # test
 def test(loaders, model, criterion, use_cuda):
