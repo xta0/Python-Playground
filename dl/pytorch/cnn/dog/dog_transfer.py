@@ -66,6 +66,8 @@ for param in model_transfer.features.parameters():
 model_transfer.classifier[6] = nn.Linear(
     model_transfer.classifier[6].in_features, 133, bias=True)
 
+print(model_transfer)
+
 if use_cuda:
     model_transfer = model_transfer.cuda()
 
@@ -139,7 +141,7 @@ def train(n_epochs, loaders, model, optimizer, criterion, use_cuda, save_path):
 
 # train the model
 print("use_cuda: ", use_cuda)
-model_transfer = train(20, loaders_transfer, model_transfer,
+model_transfer = train(10, loaders_transfer, model_transfer,
                        optimizer_transfer, criterion_transfer, use_cuda,
                        'model_transfer.pth')
 
