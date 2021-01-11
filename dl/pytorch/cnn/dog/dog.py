@@ -160,7 +160,7 @@ def train(n_epochs, loaders, model, optimizer, criterion, use_cuda, save_path):
 
 # train the model
 print("use_cuda: ", use_cuda)
-model_scratch = train(100, loaders_scratch, model_scratch, optimizer_scratch,
+model_scratch = train(50, loaders_scratch, model_scratch, optimizer_scratch,
                       criterion_scratch, use_cuda, 'model_scratch.pth')
 
 # load the model that got the best validation accuracy

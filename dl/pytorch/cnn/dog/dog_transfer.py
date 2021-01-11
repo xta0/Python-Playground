@@ -132,7 +132,7 @@ def train(n_epochs, loaders, model, optimizer, criterion, use_cuda, save_path):
             print(
                 'Validation loss decreased ({:.6f} --> {:.6f}).  Saving model ...'
                 .format(valid_loss_min, valid_loss))
-            torch.save(model.state_dict(), 'model_transfer.pt')
+            torch.save(model.state_dict(), save_path)
             valid_loss_min = valid_loss
 
     # return trained model
