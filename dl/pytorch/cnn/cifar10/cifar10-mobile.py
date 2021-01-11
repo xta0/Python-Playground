@@ -1,7 +1,6 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from onnx_coreml import convert
 
 
 class Classifier(nn.Module):
@@ -35,6 +34,8 @@ model.eval()
 
 example = torch.rand(1, 3, 32, 32)
 scripted_model = torch.jit.trace(model, example)
-scripted_model._save_for_lite_interpreter('./cifar10.bc')
-ops = torch.jit.export_opnames(scripted_model)
-print(ops)
+for param in scripted_model.parameters():
+    print(type(param), param.size())
+# scripted_model._save_for_lite_interpreter('./cifar10.bc')
+# ops = torch.jit.export_opnames(scripted_model)
+# print(ops)

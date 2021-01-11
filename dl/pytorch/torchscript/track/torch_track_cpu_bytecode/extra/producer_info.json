@@ -1,0 +1,1 @@
+{"build":{"build_mode":"dev","build_rule_type":"python_binary","build_platform":"platform007","build_rule":"fbcode:caffe2/fb/model_convert/segmentation:converter","package_version":"","package_release":"","build_time_str":"","package_name":"","upstream_revision":"","revision":""},"host_name":"devvm2780.vll0.facebook.com","time":1604697733,"unix_user":"taox"}
