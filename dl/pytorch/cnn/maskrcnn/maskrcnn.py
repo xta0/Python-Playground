@@ -39,10 +39,12 @@ orig_image = image.copy()
 image = transform(image)
 # add a batch dimension
 image = image.unsqueeze(0).to(device)
+print("image:", image.shape)
 # with torch.no_grad():
 # forward pass of the image through the modle
 outputs = model(image)
 masks, boxes, labels = get_outputs(outputs, args['threshold'])
+print("masks: ", masks.shape)
 result = draw_segmentation_map(orig_image, masks, boxes, labels)
 # visualize the image
 # cv2.imshow('Segmented image', result)
