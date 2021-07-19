@@ -34,8 +34,11 @@ model.eval()
 
 example = torch.rand(1, 3, 32, 32)
 scripted_model = torch.jit.trace(model, example)
-for param in scripted_model.parameters():
-    print(type(param), param.size())
-# scripted_model._save_for_lite_interpreter('./cifar10.bc')
-# ops = torch.jit.export_opnames(scripted_model)
-# print(ops)
+print(type(scripted_model))
+#for param in scripted_model.parameters():
+#    print(type(param), param.size())
+scripted_model.save('./cifar10.pt')
+ops = torch.jit.export_opnames(scripted_model)
+print(ops)
+scripted_model._save_for_lite_interpreter('./cifar10.bc')
+
