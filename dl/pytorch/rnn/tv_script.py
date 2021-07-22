@@ -58,12 +58,12 @@ def batch_data(words, sequence_length, batch_size):
     :param batch_size: The size of each batch; the number of sequences in a batch
     :return: DataLoader with batched data
     """
-    # TODO: Implement function
+    n_batches = len(words)//batch_size
+    words = words[:n_batches*batch_size]
     features = []
     targets = []
-    for idx, _ in enumerate(words):
-        if idx+sequence_length >= len(words):
-            break
+    total = len(words)-sequence_length
+    for idx in range(0, total):
         x = words[idx:idx+sequence_length]
         features.append(x)
         y = words[idx+sequence_length]
@@ -71,7 +71,7 @@ def batch_data(words, sequence_length, batch_size):
     train_x = np.array(features)
     train_y = np.array(targets)
     train_data = TensorDataset(torch.from_numpy(train_x), torch.from_numpy(train_y))
-    train_loader = DataLoader(train_data, shuffle=True, batch_size=batch_size)
+    train_loader = DataLoader(train_data, shuffle=False, batch_size=batch_size)
     # return a dataloader
     return train_loader
 
