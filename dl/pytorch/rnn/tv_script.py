@@ -117,7 +117,7 @@ class RNN(nn.Module):
         x = self.embedding(nn_input)
         x,h = self.lstm(x, hidden)
         x = x.contiguous().view(-1, self.hidden_dim)
-        x = self.dropout(x)
+        # x = self.dropout(x)
         x = self.fc(x)
         x = x.view(batch_size, -1, self.output_size)
         x = x[:, -1]
@@ -224,7 +224,7 @@ output_size = vocab_size
 # Embedding Dimension
 embedding_dim = 128
 # Hidden Dimension
-hidden_dim = 256
+hidden_dim = 512
 # Number of RNN Layers
 n_layers = 2
 
