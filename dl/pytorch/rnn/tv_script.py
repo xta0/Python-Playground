@@ -164,7 +164,7 @@ def forward_back_prop(rnn, optimizer, criterion, inp, target, hidden):
     h = tuple([each.data for each in hidden])
     rnn.zero_grad()
     output, h = rnn(inp, h)
-    loss = criterion(output.squeeze(), target)
+    loss = criterion(output(), target)
     loss.backward()
     nn.utils.clip_grad_norm_(rnn.parameters(), 5)
     optimizer.step()
@@ -213,7 +213,7 @@ batch_size = 100
 train_loader = batch_data(int_text, sequence_length, batch_size)
 # Training parameters
 # Number of Epochs
-num_epochs = 5
+num_epochs = 10
 # Learning Rate
 learning_rate = 0.001
 # Model parameters
@@ -222,7 +222,7 @@ vocab_size = len(vocab_to_int)
 # Output size
 output_size = vocab_size
 # Embedding Dimension
-embedding_dim = 300
+embedding_dim = 128
 # Hidden Dimension
 hidden_dim = 256
 # Number of RNN Layers
