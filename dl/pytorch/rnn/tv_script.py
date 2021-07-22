@@ -164,7 +164,7 @@ def forward_back_prop(rnn, optimizer, criterion, inp, target, hidden):
     h = tuple([each.data for each in hidden])
     rnn.zero_grad()
     output, h = rnn(inp, h)
-    loss = criterion(output(), target)
+    loss = criterion(output, target)
     loss.backward()
     nn.utils.clip_grad_norm_(rnn.parameters(), 5)
     optimizer.step()
