@@ -104,8 +104,6 @@ class RNN(nn.Module):
         self.lstm = nn.LSTM(embedding_dim, hidden_dim, n_layers, 
                             dropout=dropout, batch_first=True)
         self.fc = nn.Linear(hidden_dim, output_size)
-        self.sig = nn.Sigmoid()
-        
         self.dropout = nn.Dropout(dropout)
     
     def forward(self, nn_input, hidden):
@@ -121,7 +119,6 @@ class RNN(nn.Module):
         x = x.contiguous().view(-1, self.hidden_dim)
         x = self.dropout(x)
         x = self.fc(x)
-        x = self.sig(x)
         x = x.view(batch_size, -1, self.output_size)
         x = x[:, -1]
 
