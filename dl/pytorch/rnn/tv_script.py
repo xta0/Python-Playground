@@ -206,14 +206,14 @@ def train_rnn(rnn, batch_size, optimizer, criterion, n_epochs, show_every_n_batc
 
 # Data params
 # Sequence Length
-sequence_length = 10  # of words in a sequence
+sequence_length = 8  # of words in a sequence
 # Batch Size
 batch_size = 100
 # data loader - do not change
 train_loader = batch_data(int_text, sequence_length, batch_size)
 # Training parameters
 # Number of Epochs
-num_epochs = 10
+num_epochs = 5
 # Learning Rate
 learning_rate = 0.001
 # Model parameters
