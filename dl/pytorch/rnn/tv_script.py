@@ -29,6 +29,26 @@ def create_lookup_tables(text):
 
     return vocab_to_int, int_to_vocab
 
+def token_lookup():
+    """
+    Generate a dict to turn punctuation into a token.
+    :return: Tokenized dictionary where the key is the punctuation and the value is the token
+    """
+    return {
+        '.': '||PERIOD||',
+        ',': '||COMMA||',
+        '"': '||QUOTATION_MARK||',
+        ';': '||SEMICOLON||',
+        '!': '||EXCLAMATION_MARK||',
+        '?': '||QUESTION_MARK||',
+        '(': '||LEFT_PAREN>||',
+        ')': '||RIGHT_PAREN||',
+        '-': '||DASH||',
+        '\n': '||RETURN||',
+    }
+
+
+helper.preprocess_and_save_data(data_dir, token_lookup, create_lookup_tables)
 
 def batch_data(words, sequence_length, batch_size):
     """
@@ -55,17 +75,11 @@ def batch_data(words, sequence_length, batch_size):
     # return a dataloader
     return train_loader
 
-test_text = range(50)
-t_loader = batch_data(test_text, sequence_length=5, batch_size=10)
-
-data_iter = iter(t_loader)
-sample_x, sample_y = data_iter.next()
-
-print(sample_x.shape)
-print(sample_x)
-print()
-print(sample_y.shape)
-print(sample_y)
+int_text, vocab_to_int, int_to_vocab, token_dict = helper.load_preprocess()
+print(token_dict)
+print(int_text[:10])
+print(list(vocab_to_int.values())[:10])
+print(list(int_to_vocab.values())[:10])
 
 class RNN(nn.Module):
     
