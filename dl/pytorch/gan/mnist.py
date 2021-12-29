@@ -37,6 +37,7 @@ img = np.squeeze(images[0])
 fig = plt.figure(figsize = (3,3)) 
 ax = fig.add_subplot(111)
 ax.imshow(img, cmap='gray')
+plt.show()
 
 
 class Discriminator(nn.Module):
@@ -194,11 +195,8 @@ fixed_z = torch.from_numpy(fixed_z).float()
 D.train()
 G.train()
 for epoch in range(num_epochs):
-    
     for batch_i, (real_images, _) in enumerate(train_loader):
-                
         batch_size = real_images.size(0)
-        
         ## Important rescaling step ## 
         real_images = real_images*2 - 1  # rescale input images from [0,1) to [-1, 1)
         
@@ -258,14 +256,15 @@ for epoch in range(num_epochs):
             # print discriminator and generator loss
             print('Epoch [{:5d}/{:5d}] | d_loss: {:6.4f} | g_loss: {:6.4f}'.format(
                     epoch+1, num_epochs, d_loss.item(), g_loss.item()))
+            torch.save(G.state_dict(), './mnist.pth')
 
     
     ## AFTER EACH EPOCH##
     # append discriminator loss and generator loss
     losses.append((d_loss.item(), g_loss.item()))
-    
     # generate and save sample, fake images
     G.eval() # eval mode for generating samples
+    
     samples_z = G(fixed_z)
     samples.append(samples_z)
     G.train() # back to train mode
@@ -280,6 +279,7 @@ plt.plot(losses.T[0], label='Discriminator')
 plt.plot(losses.T[1], label='Generator')
 plt.title("Training Losses")
 plt.legend()
+plt.show()
 
 # helper function for viewing a list of passed in sample images
 def view_samples(epoch, samples):
@@ -289,13 +289,14 @@ def view_samples(epoch, samples):
         ax.xaxis.set_visible(False)
         ax.yaxis.set_visible(False)
         im = ax.imshow(img.reshape((28,28)), cmap='Greys_r')
+        plt.show()
         
 # Load samples from generator, taken while training
 with open('train_samples.pkl', 'rb') as f:
     samples = pkl.load(f)
 
 # -1 indicates final epoch's samples (the last in the list)
-view_samples(-1, samples)
+# view_samples(-1, samples)
 
 rows = 10 # split epochs into 10, so 100/10 = every 10 epochs
 cols = 6
