@@ -295,8 +295,9 @@ def view_samples(epoch, samples):
 with open('train_samples.pkl', 'rb') as f:
     samples = pkl.load(f)
 
+print(len(samples))
 # -1 indicates final epoch's samples (the last in the list)
-# view_samples(-1, samples)
+view_samples(-1, samples)
 
 rows = 10 # split epochs into 10, so 100/10 = every 10 epochs
 cols = 6
