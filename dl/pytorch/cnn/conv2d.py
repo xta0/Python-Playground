@@ -13,15 +13,13 @@ def saveToMPSImage(x):
     print(f"mps: {x}")
     np.savetxt('./x.txt',[x], delimiter=',')    
     
-x  = torch.randn(4,2,2)
-x = torch.tensor([[[1.0,1.0],[1.0,0]],[[1.0,1.0],[1.0,0]],[[1.0,1.0],[1.0,0]],[[1.0,1.0],[1.0,0]]])
-# saveToMPSImage(x)
-x  = x.unsqueeze(0) #[1,4,2,2]
+x  = torch.randn(3,2,2)
+saveToMPSImage(x)
+x  = x.unsqueeze(0) #[1,3,2,2]
 
-# input: [1,4,2,2]
+# input: [1,3,2,2]
 print('---------------------')
-conv    = nn.Conv2d(4,1,2,padding=0,bias=False) #ic=3, oc=2, kernel size =2, padding=1
-conv.weight = nn.Parameter(torch.ones([1,4,2,2]))
+conv    = nn.Conv2d(3,2,2,padding=0,bias=False) #ic=3, oc=2, kernel size =2, padding=1
 w       = conv.weight
 print(w.shape)
 wp      = w.permute(0,2,3,1).contiguous().view(-1).detach().numpy()
