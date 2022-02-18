@@ -1,0 +1,1001 @@
+2020-08-30 23:22:28.790250-0700 PyTorchPlayground[18364:1276989] START BENCHMARKING...
+2020-08-30 23:22:28.835101-0700 PyTorchPlayground[18364:1277166] [Thread]:<NSThread: 0x280730f80>{number = 6, name = (null)}
+2020-08-30 23:22:28.835682-0700 PyTorchPlayground[18364:1277166] [COPY TO METAL] took 0.611
+2020-08-30 23:22:28.835835-0700 PyTorchPlayground[18364:1277166] [Thread]:<NSThread: 0x280730f80>{number = 6, name = (null)}
+2020-08-30 23:22:28.835970-0700 PyTorchPlayground[18364:1277166] [COPY TO METAL] took 0.142
+2020-08-30 23:22:28.836070-0700 PyTorchPlayground[18364:1277166] [sub] took: 0.065
+2020-08-30 23:22:28.836150-0700 PyTorchPlayground[18364:1277166] [Thread]:<NSThread: 0x280730f80>{number = 6, name = (null)}
+2020-08-30 23:22:28.836276-0700 PyTorchPlayground[18364:1277166] [COPY TO METAL] took 0.131
+2020-08-30 23:22:28.836364-0700 PyTorchPlayground[18364:1277166] [mul] took: 0.057
+2020-08-30 23:22:28.836573-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.124
+2020-08-30 23:22:28.836682-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.065
+2020-08-30 23:22:28.836802-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.065
+2020-08-30 23:22:28.836951-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.088
+2020-08-30 23:22:28.837048-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.059
+2020-08-30 23:22:28.837138-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.049
+2020-08-30 23:22:28.837307-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.113
+2020-08-30 23:22:28.837390-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.047
+2020-08-30 23:22:28.837481-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.052
+2020-08-30 23:22:28.837724-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.187
+2020-08-30 23:22:28.837812-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.050
+2020-08-30 23:22:28.837905-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.054
+2020-08-30 23:22:28.838623-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.662
+2020-08-30 23:22:28.838711-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.047
+2020-08-30 23:22:28.838801-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.048
+2020-08-30 23:22:28.839473-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.615
+2020-08-30 23:22:28.840088-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.552
+2020-08-30 23:22:28.840215-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.070
+2020-08-30 23:22:28.840324-0700 PyTorchPlayground[18364:1277166] [add] took: 0.062
+2020-08-30 23:22:28.840428-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.061
+2020-08-30 23:22:28.840854-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.366
+2020-08-30 23:22:28.840965-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.053
+2020-08-30 23:22:28.841058-0700 PyTorchPlayground[18364:1277166] [add] took: 0.052
+2020-08-30 23:22:28.841148-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.049
+2020-08-30 23:22:28.841355-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.150
+2020-08-30 23:22:28.841453-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.054
+2020-08-30 23:22:28.841544-0700 PyTorchPlayground[18364:1277166] [add] took: 0.051
+2020-08-30 23:22:28.841639-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.053
+2020-08-30 23:22:28.841793-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.099
+2020-08-30 23:22:28.841908-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.073
+2020-08-30 23:22:28.841998-0700 PyTorchPlayground[18364:1277166] [add] took: 0.051
+2020-08-30 23:22:28.842086-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.047
+2020-08-30 23:22:28.842220-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.080
+2020-08-30 23:22:28.842321-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.060
+2020-08-30 23:22:28.842414-0700 PyTorchPlayground[18364:1277166] [add] took: 0.048
+2020-08-30 23:22:28.842502-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.048
+2020-08-30 23:22:28.842657-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.102
+2020-08-30 23:22:28.842773-0700 PyTorchPlayground[18364:1277166] [sigmoid] took: 0.072
+2020-08-30 23:22:28.842897-0700 PyTorchPlayground[18364:1277166] [copy_to_host] took: 0.083
+2020-08-30 23:22:28.854628-0700 PyTorchPlayground[18364:1277166] [Sychronization] took 11.596
+2020-08-30 23:22:28.857019-0700 PyTorchPlayground[18364:1277166] [COPY From METAL] took 2.333
+Segmentation took: 22.112
+2020-08-30 23:22:28.901129-0700 PyTorchPlayground[18364:1277166] [Thread]:<NSThread: 0x280730f80>{number = 6, name = (null)}
+2020-08-30 23:22:28.902044-0700 PyTorchPlayground[18364:1277166] [COPY TO METAL] took 0.987
+2020-08-30 23:22:28.902179-0700 PyTorchPlayground[18364:1277166] [Thread]:<NSThread: 0x280730f80>{number = 6, name = (null)}
+2020-08-30 23:22:28.903334-0700 PyTorchPlayground[18364:1277166] [COPY TO METAL] took 1.162
+2020-08-30 23:22:28.903487-0700 PyTorchPlayground[18364:1277166] [sub] took: 0.121
+2020-08-30 23:22:28.903576-0700 PyTorchPlayground[18364:1277166] [Thread]:<NSThread: 0x280730f80>{number = 6, name = (null)}
+2020-08-30 23:22:28.903662-0700 PyTorchPlayground[18364:1277166] [COPY TO METAL] took 0.092
+2020-08-30 23:22:28.903784-0700 PyTorchPlayground[18364:1277166] [mul] took: 0.093
+2020-08-30 23:22:28.904528-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.655
+2020-08-30 23:22:28.904674-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.085
+2020-08-30 23:22:28.904797-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.068
+2020-08-30 23:22:28.904970-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.106
+2020-08-30 23:22:28.905061-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.051
+2020-08-30 23:22:28.905157-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.057
+2020-08-30 23:22:28.905361-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.145
+2020-08-30 23:22:28.905459-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.055
+2020-08-30 23:22:28.905556-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.058
+2020-08-30 23:22:28.905804-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.190
+2020-08-30 23:22:28.905896-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.051
+2020-08-30 23:22:28.905989-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.053
+2020-08-30 23:22:28.906366-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.320
+2020-08-30 23:22:28.906470-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.057
+2020-08-30 23:22:28.906575-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.060
+2020-08-30 23:22:28.907236-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.600
+2020-08-30 23:22:28.907860-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.555
+2020-08-30 23:22:28.907997-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.073
+2020-08-30 23:22:28.908112-0700 PyTorchPlayground[18364:1277166] [add] took: 0.065
+2020-08-30 23:22:28.908213-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.057
+2020-08-30 23:22:28.908725-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.451
+2020-08-30 23:22:28.908832-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.056
+2020-08-30 23:22:28.908944-0700 PyTorchPlayground[18364:1277166] [add] took: 0.070
+2020-08-30 23:22:28.909035-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.049
+2020-08-30 23:22:28.909279-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.186
+2020-08-30 23:22:28.909380-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.060
+2020-08-30 23:22:28.909471-0700 PyTorchPlayground[18364:1277166] [add] took: 0.051
+2020-08-30 23:22:28.909557-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.047
+2020-08-30 23:22:28.909722-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.109
+2020-08-30 23:22:28.909846-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.082
+2020-08-30 23:22:28.909952-0700 PyTorchPlayground[18364:1277166] [add] took: 0.060
+2020-08-30 23:22:28.910044-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.051
+2020-08-30 23:22:28.910177-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.078
+2020-08-30 23:22:28.910278-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.055
+2020-08-30 23:22:28.910369-0700 PyTorchPlayground[18364:1277166] [add] took: 0.051
+2020-08-30 23:22:28.910477-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.068
+2020-08-30 23:22:28.910645-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.112
+2020-08-30 23:22:28.910752-0700 PyTorchPlayground[18364:1277166] [sigmoid] took: 0.068
+2020-08-30 23:22:28.910875-0700 PyTorchPlayground[18364:1277166] [copy_to_host] took: 0.079
+2020-08-30 23:22:28.925065-0700 PyTorchPlayground[18364:1277166] [Sychronization] took 14.062
+2020-08-30 23:22:28.925899-0700 PyTorchPlayground[18364:1277166] [COPY From METAL] took 0.769
+Segmentation took: 25.0146
+2020-08-30 23:22:28.969690-0700 PyTorchPlayground[18364:1277166] [Thread]:<NSThread: 0x280730f80>{number = 6, name = (null)}
+2020-08-30 23:22:28.970373-0700 PyTorchPlayground[18364:1277166] [COPY TO METAL] took 0.748
+2020-08-30 23:22:28.970527-0700 PyTorchPlayground[18364:1277166] [Thread]:<NSThread: 0x280730f80>{number = 6, name = (null)}
+2020-08-30 23:22:28.971013-0700 PyTorchPlayground[18364:1277166] [COPY TO METAL] took 0.497
+2020-08-30 23:22:28.971125-0700 PyTorchPlayground[18364:1277166] [sub] took: 0.072
+2020-08-30 23:22:28.971214-0700 PyTorchPlayground[18364:1277166] [Thread]:<NSThread: 0x280730f80>{number = 6, name = (null)}
+2020-08-30 23:22:28.971295-0700 PyTorchPlayground[18364:1277166] [COPY TO METAL] took 0.087
+2020-08-30 23:22:28.971394-0700 PyTorchPlayground[18364:1277166] [mul] took: 0.067
+2020-08-30 23:22:28.971607-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.128
+2020-08-30 23:22:28.971725-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.069
+2020-08-30 23:22:28.971844-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.065
+2020-08-30 23:22:28.972027-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.121
+2020-08-30 23:22:28.972120-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.052
+2020-08-30 23:22:28.972212-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.051
+2020-08-30 23:22:28.972389-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.117
+2020-08-30 23:22:28.972486-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.052
+2020-08-30 23:22:28.972584-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.052
+2020-08-30 23:22:28.972802-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.158
+2020-08-30 23:22:28.972897-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.053
+2020-08-30 23:22:28.972993-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.054
+2020-08-30 23:22:28.973322-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.270
+2020-08-30 23:22:28.973416-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.052
+2020-08-30 23:22:28.973506-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.050
+2020-08-30 23:22:28.974088-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.523
+2020-08-30 23:22:28.974711-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.553
+2020-08-30 23:22:28.974891-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.108
+2020-08-30 23:22:28.975017-0700 PyTorchPlayground[18364:1277166] [add] took: 0.072
+2020-08-30 23:22:28.975136-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.068
+2020-08-30 23:22:28.975504-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.283
+2020-08-30 23:22:28.975610-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.059
+2020-08-30 23:22:28.975707-0700 PyTorchPlayground[18364:1277166] [add] took: 0.057
+2020-08-30 23:22:28.975804-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.055
+2020-08-30 23:22:28.976132-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.268
+2020-08-30 23:22:28.976236-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.057
+2020-08-30 23:22:28.976344-0700 PyTorchPlayground[18364:1277166] [add] took: 0.066
+2020-08-30 23:22:28.976441-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.051
+2020-08-30 23:22:28.976617-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.117
+2020-08-30 23:22:28.976737-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.076
+2020-08-30 23:22:28.976830-0700 PyTorchPlayground[18364:1277166] [add] took: 0.051
+2020-08-30 23:22:28.976934-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.060
+2020-08-30 23:22:28.977105-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.113
+2020-08-30 23:22:28.977224-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.074
+2020-08-30 23:22:28.977329-0700 PyTorchPlayground[18364:1277166] [add] took: 0.060
+2020-08-30 23:22:28.977421-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.050
+2020-08-30 23:22:28.977580-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.101
+2020-08-30 23:22:28.977681-0700 PyTorchPlayground[18364:1277166] [sigmoid] took: 0.057
+2020-08-30 23:22:28.977801-0700 PyTorchPlayground[18364:1277166] [copy_to_host] took: 0.078
+2020-08-30 23:22:28.993003-0700 PyTorchPlayground[18364:1277166] [Sychronization] took 15.067
+2020-08-30 23:22:28.993927-0700 PyTorchPlayground[18364:1277166] [COPY From METAL] took 0.864
+Segmentation took: 24.4698
+2020-08-30 23:22:29.046279-0700 PyTorchPlayground[18364:1277166] [Thread]:<NSThread: 0x280730f80>{number = 6, name = (null)}
+2020-08-30 23:22:29.046895-0700 PyTorchPlayground[18364:1277166] [COPY TO METAL] took 0.672
+2020-08-30 23:22:29.047054-0700 PyTorchPlayground[18364:1277166] [Thread]:<NSThread: 0x280730f80>{number = 6, name = (null)}
+2020-08-30 23:22:29.047160-0700 PyTorchPlayground[18364:1277166] [COPY TO METAL] took 0.117
+2020-08-30 23:22:29.047254-0700 PyTorchPlayground[18364:1277166] [sub] took: 0.063
+2020-08-30 23:22:29.047338-0700 PyTorchPlayground[18364:1277166] [Thread]:<NSThread: 0x280730f80>{number = 6, name = (null)}
+2020-08-30 23:22:29.047421-0700 PyTorchPlayground[18364:1277166] [COPY TO METAL] took 0.090
+2020-08-30 23:22:29.047505-0700 PyTorchPlayground[18364:1277166] [mul] took: 0.057
+2020-08-30 23:22:29.047766-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.167
+2020-08-30 23:22:29.047883-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.075
+2020-08-30 23:22:29.047999-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.063
+2020-08-30 23:22:29.048152-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.094
+2020-08-30 23:22:29.048243-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.052
+2020-08-30 23:22:29.048334-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.052
+2020-08-30 23:22:29.048516-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.126
+2020-08-30 23:22:29.048610-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.049
+2020-08-30 23:22:29.048707-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.050
+2020-08-30 23:22:29.049015-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.248
+2020-08-30 23:22:29.049103-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.049
+2020-08-30 23:22:29.049197-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.054
+2020-08-30 23:22:29.049601-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.346
+2020-08-30 23:22:29.049718-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.065
+2020-08-30 23:22:29.049817-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.055
+2020-08-30 23:22:29.050549-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.669
+2020-08-30 23:22:29.051150-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.540
+2020-08-30 23:22:29.051290-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.083
+2020-08-30 23:22:29.051397-0700 PyTorchPlayground[18364:1277166] [add] took: 0.060
+2020-08-30 23:22:29.051496-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.057
+2020-08-30 23:22:29.051834-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.279
+2020-08-30 23:22:29.051937-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.056
+2020-08-30 23:22:29.052034-0700 PyTorchPlayground[18364:1277166] [add] took: 0.055
+2020-08-30 23:22:29.052125-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.050
+2020-08-30 23:22:29.052401-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.218
+2020-08-30 23:22:29.052506-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.062
+2020-08-30 23:22:29.052615-0700 PyTorchPlayground[18364:1277166] [add] took: 0.070
+2020-08-30 23:22:29.052706-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.050
+2020-08-30 23:22:29.052874-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.114
+2020-08-30 23:22:29.052988-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.070
+2020-08-30 23:22:29.053093-0700 PyTorchPlayground[18364:1277166] [add] took: 0.065
+2020-08-30 23:22:29.053184-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.052
+2020-08-30 23:22:29.053324-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.085
+2020-08-30 23:22:29.053416-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.053
+2020-08-30 23:22:29.053549-0700 PyTorchPlayground[18364:1277166] [add] took: 0.056
+2020-08-30 23:22:29.053641-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.051
+2020-08-30 23:22:29.053797-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.102
+2020-08-30 23:22:29.053895-0700 PyTorchPlayground[18364:1277166] [sigmoid] took: 0.058
+2020-08-30 23:22:29.054005-0700 PyTorchPlayground[18364:1277166] [copy_to_host] took: 0.072
+2020-08-30 23:22:29.069340-0700 PyTorchPlayground[18364:1277166] [Sychronization] took 15.186
+2020-08-30 23:22:29.070479-0700 PyTorchPlayground[18364:1277166] [COPY From METAL] took 1.053
+Segmentation took: 24.42
+2020-08-30 23:22:29.116081-0700 PyTorchPlayground[18364:1277166] [Thread]:<NSThread: 0x280730f80>{number = 6, name = (null)}
+2020-08-30 23:22:29.116688-0700 PyTorchPlayground[18364:1277166] [COPY TO METAL] took 0.661
+2020-08-30 23:22:29.116848-0700 PyTorchPlayground[18364:1277166] [Thread]:<NSThread: 0x280730f80>{number = 6, name = (null)}
+2020-08-30 23:22:29.116960-0700 PyTorchPlayground[18364:1277166] [COPY TO METAL] took 0.119
+2020-08-30 23:22:29.117080-0700 PyTorchPlayground[18364:1277166] [sub] took: 0.088
+2020-08-30 23:22:29.117159-0700 PyTorchPlayground[18364:1277166] [Thread]:<NSThread: 0x280730f80>{number = 6, name = (null)}
+2020-08-30 23:22:29.117234-0700 PyTorchPlayground[18364:1277166] [COPY TO METAL] took 0.081
+2020-08-30 23:22:29.117315-0700 PyTorchPlayground[18364:1277166] [mul] took: 0.054
+2020-08-30 23:22:29.117511-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.121
+2020-08-30 23:22:29.117631-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.076
+2020-08-30 23:22:29.117754-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.066
+2020-08-30 23:22:29.117909-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.096
+2020-08-30 23:22:29.118009-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.061
+2020-08-30 23:22:29.118097-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.050
+2020-08-30 23:22:29.118282-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.127
+2020-08-30 23:22:29.118399-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.075
+2020-08-30 23:22:29.118499-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.053
+2020-08-30 23:22:29.118757-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.203
+2020-08-30 23:22:29.118846-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.049
+2020-08-30 23:22:29.118936-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.054
+2020-08-30 23:22:29.119364-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.367
+2020-08-30 23:22:29.119467-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.057
+2020-08-30 23:22:29.119562-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.047
+2020-08-30 23:22:29.120143-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.520
+2020-08-30 23:22:29.120699-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.486
+2020-08-30 23:22:29.120827-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.073
+2020-08-30 23:22:29.120933-0700 PyTorchPlayground[18364:1277166] [add] took: 0.062
+2020-08-30 23:22:29.121026-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.049
+2020-08-30 23:22:29.122086-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.987
+2020-08-30 23:22:29.122203-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.057
+2020-08-30 23:22:29.122299-0700 PyTorchPlayground[18364:1277166] [add] took: 0.054
+2020-08-30 23:22:29.122388-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.050
+2020-08-30 23:22:29.122621-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.179
+2020-08-30 23:22:29.122716-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.053
+2020-08-30 23:22:29.122822-0700 PyTorchPlayground[18364:1277166] [add] took: 0.068
+2020-08-30 23:22:29.122908-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.047
+2020-08-30 23:22:29.123082-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.117
+2020-08-30 23:22:29.123188-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.065
+2020-08-30 23:22:29.123276-0700 PyTorchPlayground[18364:1277166] [add] took: 0.049
+2020-08-30 23:22:29.123361-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.046
+2020-08-30 23:22:29.123493-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.079
+2020-08-30 23:22:29.123588-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.053
+2020-08-30 23:22:29.123676-0700 PyTorchPlayground[18364:1277166] [add] took: 0.050
+2020-08-30 23:22:29.123769-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.055
+2020-08-30 23:22:29.123922-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.098
+2020-08-30 23:22:29.124013-0700 PyTorchPlayground[18364:1277166] [sigmoid] took: 0.054
+2020-08-30 23:22:29.124121-0700 PyTorchPlayground[18364:1277166] [copy_to_host] took: 0.071
+2020-08-30 23:22:29.136394-0700 PyTorchPlayground[18364:1277166] [Sychronization] took 12.148
+2020-08-30 23:22:29.137494-0700 PyTorchPlayground[18364:1277166] [COPY From METAL] took 1.023
+Segmentation took: 21.6257
+2020-08-30 23:22:29.188118-0700 PyTorchPlayground[18364:1277166] [Thread]:<NSThread: 0x280730f80>{number = 6, name = (null)}
+2020-08-30 23:22:29.188706-0700 PyTorchPlayground[18364:1277166] [COPY TO METAL] took 0.633
+2020-08-30 23:22:29.188881-0700 PyTorchPlayground[18364:1277166] [Thread]:<NSThread: 0x280730f80>{number = 6, name = (null)}
+2020-08-30 23:22:29.188985-0700 PyTorchPlayground[18364:1277166] [COPY TO METAL] took 0.110
+2020-08-30 23:22:29.189080-0700 PyTorchPlayground[18364:1277166] [sub] took: 0.066
+2020-08-30 23:22:29.189162-0700 PyTorchPlayground[18364:1277166] [Thread]:<NSThread: 0x280730f80>{number = 6, name = (null)}
+2020-08-30 23:22:29.189251-0700 PyTorchPlayground[18364:1277166] [COPY TO METAL] took 0.094
+2020-08-30 23:22:29.189338-0700 PyTorchPlayground[18364:1277166] [mul] took: 0.058
+2020-08-30 23:22:29.189555-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.137
+2020-08-30 23:22:29.189667-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.071
+2020-08-30 23:22:29.189774-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.057
+2020-08-30 23:22:29.189921-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.089
+2020-08-30 23:22:29.190005-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.047
+2020-08-30 23:22:29.190092-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.049
+2020-08-30 23:22:29.190264-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.119
+2020-08-30 23:22:29.190349-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.048
+2020-08-30 23:22:29.190452-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.065
+2020-08-30 23:22:29.190670-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.164
+2020-08-30 23:22:29.190755-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.047
+2020-08-30 23:22:29.190844-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.050
+2020-08-30 23:22:29.191233-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.332
+2020-08-30 23:22:29.191348-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.060
+2020-08-30 23:22:29.191449-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.056
+2020-08-30 23:22:29.192078-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.566
+2020-08-30 23:22:29.192719-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.576
+2020-08-30 23:22:29.192848-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.073
+2020-08-30 23:22:29.192970-0700 PyTorchPlayground[18364:1277166] [add] took: 0.075
+2020-08-30 23:22:29.193063-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.051
+2020-08-30 23:22:29.193395-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.275
+2020-08-30 23:22:29.193501-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.058
+2020-08-30 23:22:29.193597-0700 PyTorchPlayground[18364:1277166] [add] took: 0.054
+2020-08-30 23:22:29.193718-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.081
+2020-08-30 23:22:29.193949-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.172
+2020-08-30 23:22:29.194078-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.084
+2020-08-30 23:22:29.194171-0700 PyTorchPlayground[18364:1277166] [add] took: 0.053
+2020-08-30 23:22:29.194269-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.058
+2020-08-30 23:22:29.194445-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.121
+2020-08-30 23:22:29.194567-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.072
+2020-08-30 23:22:29.194659-0700 PyTorchPlayground[18364:1277166] [add] took: 0.053
+2020-08-30 23:22:29.194747-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.048
+2020-08-30 23:22:29.194893-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.083
+2020-08-30 23:22:29.194993-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.056
+2020-08-30 23:22:29.195081-0700 PyTorchPlayground[18364:1277166] [add] took: 0.050
+2020-08-30 23:22:29.195168-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.050
+2020-08-30 23:22:29.195318-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.096
+2020-08-30 23:22:29.195410-0700 PyTorchPlayground[18364:1277166] [sigmoid] took: 0.055
+2020-08-30 23:22:29.195539-0700 PyTorchPlayground[18364:1277166] [copy_to_host] took: 0.091
+2020-08-30 23:22:29.210473-0700 PyTorchPlayground[18364:1277166] [Sychronization] took 14.796
+2020-08-30 23:22:29.211597-0700 PyTorchPlayground[18364:1277166] [COPY From METAL] took 1.053
+Segmentation took: 23.6807
+2020-08-30 23:22:29.255692-0700 PyTorchPlayground[18364:1277166] [Thread]:<NSThread: 0x280730f80>{number = 6, name = (null)}
+2020-08-30 23:22:29.256274-0700 PyTorchPlayground[18364:1277166] [COPY TO METAL] took 0.631
+2020-08-30 23:22:29.256412-0700 PyTorchPlayground[18364:1277166] [Thread]:<NSThread: 0x280730f80>{number = 6, name = (null)}
+2020-08-30 23:22:29.256523-0700 PyTorchPlayground[18364:1277166] [COPY TO METAL] took 0.117
+2020-08-30 23:22:29.256615-0700 PyTorchPlayground[18364:1277166] [sub] took: 0.063
+2020-08-30 23:22:29.256699-0700 PyTorchPlayground[18364:1277166] [Thread]:<NSThread: 0x280730f80>{number = 6, name = (null)}
+2020-08-30 23:22:29.256778-0700 PyTorchPlayground[18364:1277166] [COPY TO METAL] took 0.085
+2020-08-30 23:22:29.256861-0700 PyTorchPlayground[18364:1277166] [mul] took: 0.055
+2020-08-30 23:22:29.257118-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.164
+2020-08-30 23:22:29.257220-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.058
+2020-08-30 23:22:29.257331-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.061
+2020-08-30 23:22:29.257486-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.094
+2020-08-30 23:22:29.257576-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.052
+2020-08-30 23:22:29.257693-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.073
+2020-08-30 23:22:29.257872-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.122
+2020-08-30 23:22:29.257964-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.049
+2020-08-30 23:22:29.258051-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.049
+2020-08-30 23:22:29.258270-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.164
+2020-08-30 23:22:29.258370-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.062
+2020-08-30 23:22:29.258460-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.051
+2020-08-30 23:22:29.258850-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.334
+2020-08-30 23:22:29.258968-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.060
+2020-08-30 23:22:29.259063-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.052
+2020-08-30 23:22:29.259659-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.534
+2020-08-30 23:22:29.260194-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.468
+2020-08-30 23:22:29.260316-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.068
+2020-08-30 23:22:29.260428-0700 PyTorchPlayground[18364:1277166] [add] took: 0.067
+2020-08-30 23:22:29.260518-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.049
+2020-08-30 23:22:29.260951-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.366
+2020-08-30 23:22:29.261060-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.062
+2020-08-30 23:22:29.261163-0700 PyTorchPlayground[18364:1277166] [add] took: 0.056
+2020-08-30 23:22:29.261250-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.048
+2020-08-30 23:22:29.261467-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.162
+2020-08-30 23:22:29.261563-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.053
+2020-08-30 23:22:29.261655-0700 PyTorchPlayground[18364:1277166] [add] took: 0.051
+2020-08-30 23:22:29.261744-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.050
+2020-08-30 23:22:29.261910-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.112
+2020-08-30 23:22:29.262025-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.071
+2020-08-30 23:22:29.262113-0700 PyTorchPlayground[18364:1277166] [add] took: 0.049
+2020-08-30 23:22:29.262199-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.047
+2020-08-30 23:22:29.262364-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.112
+2020-08-30 23:22:29.262468-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.065
+2020-08-30 23:22:29.262559-0700 PyTorchPlayground[18364:1277166] [add] took: 0.051
+2020-08-30 23:22:29.262650-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.052
+2020-08-30 23:22:29.262824-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.114
+2020-08-30 23:22:29.262925-0700 PyTorchPlayground[18364:1277166] [sigmoid] took: 0.059
+2020-08-30 23:22:29.263040-0700 PyTorchPlayground[18364:1277166] [copy_to_host] took: 0.075
+2020-08-30 23:22:29.276979-0700 PyTorchPlayground[18364:1277166] [Sychronization] took 13.795
+2020-08-30 23:22:29.278183-0700 PyTorchPlayground[18364:1277166] [COPY From METAL] took 1.129
+Segmentation took: 22.6945
+2020-08-30 23:22:29.325983-0700 PyTorchPlayground[18364:1277166] [Thread]:<NSThread: 0x280730f80>{number = 6, name = (null)}
+2020-08-30 23:22:29.326481-0700 PyTorchPlayground[18364:1277166] [COPY TO METAL] took 0.536
+2020-08-30 23:22:29.326613-0700 PyTorchPlayground[18364:1277166] [Thread]:<NSThread: 0x280730f80>{number = 6, name = (null)}
+2020-08-30 23:22:29.326723-0700 PyTorchPlayground[18364:1277166] [COPY TO METAL] took 0.117
+2020-08-30 23:22:29.326815-0700 PyTorchPlayground[18364:1277166] [sub] took: 0.063
+2020-08-30 23:22:29.326896-0700 PyTorchPlayground[18364:1277166] [Thread]:<NSThread: 0x280730f80>{number = 6, name = (null)}
+2020-08-30 23:22:29.326976-0700 PyTorchPlayground[18364:1277166] [COPY TO METAL] took 0.085
+2020-08-30 23:22:29.327067-0700 PyTorchPlayground[18364:1277166] [mul] took: 0.055
+2020-08-30 23:22:29.327259-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.117
+2020-08-30 23:22:29.327371-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.072
+2020-08-30 23:22:29.327524-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.093
+2020-08-30 23:22:29.327682-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.097
+2020-08-30 23:22:29.327781-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.052
+2020-08-30 23:22:29.327876-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.054
+2020-08-30 23:22:29.328063-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.131
+2020-08-30 23:22:29.328153-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.051
+2020-08-30 23:22:29.328242-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.050
+2020-08-30 23:22:29.328533-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.233
+2020-08-30 23:22:29.328645-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.060
+2020-08-30 23:22:29.328744-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.055
+2020-08-30 23:22:29.329138-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.330
+2020-08-30 23:22:29.329241-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.054
+2020-08-30 23:22:29.329388-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.058
+2020-08-30 23:22:29.330153-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.696
+2020-08-30 23:22:29.330909-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.664
+2020-08-30 23:22:29.331043-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.071
+2020-08-30 23:22:29.331150-0700 PyTorchPlayground[18364:1277166] [add] took: 0.062
+2020-08-30 23:22:29.331253-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.061
+2020-08-30 23:22:29.331633-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.317
+2020-08-30 23:22:29.331740-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.064
+2020-08-30 23:22:29.331834-0700 PyTorchPlayground[18364:1277166] [add] took: 0.054
+2020-08-30 23:22:29.331920-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.047
+2020-08-30 23:22:29.332137-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.163
+2020-08-30 23:22:29.332236-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.057
+2020-08-30 23:22:29.332327-0700 PyTorchPlayground[18364:1277166] [add] took: 0.052
+2020-08-30 23:22:29.332428-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.062
+2020-08-30 23:22:29.332593-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.109
+2020-08-30 23:22:29.332721-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.082
+2020-08-30 23:22:29.332854-0700 PyTorchPlayground[18364:1277166] [add] took: 0.093
+2020-08-30 23:22:29.332939-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.047
+2020-08-30 23:22:29.333090-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.098
+2020-08-30 23:22:29.333185-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.056
+2020-08-30 23:22:29.333272-0700 PyTorchPlayground[18364:1277166] [add] took: 0.050
+2020-08-30 23:22:29.333361-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.049
+2020-08-30 23:22:29.333506-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.092
+2020-08-30 23:22:29.333601-0700 PyTorchPlayground[18364:1277166] [sigmoid] took: 0.055
+2020-08-30 23:22:29.333719-0700 PyTorchPlayground[18364:1277166] [copy_to_host] took: 0.082
+2020-08-30 23:22:29.347797-0700 PyTorchPlayground[18364:1277166] [Sychronization] took 13.905
+2020-08-30 23:22:29.349019-0700 PyTorchPlayground[18364:1277166] [COPY From METAL] took 1.132
+Segmentation took: 23.2179
+2020-08-30 23:22:29.400048-0700 PyTorchPlayground[18364:1277166] [Thread]:<NSThread: 0x280730f80>{number = 6, name = (null)}
+2020-08-30 23:22:29.400632-0700 PyTorchPlayground[18364:1277166] [COPY TO METAL] took 0.621
+2020-08-30 23:22:29.400785-0700 PyTorchPlayground[18364:1277166] [Thread]:<NSThread: 0x280730f80>{number = 6, name = (null)}
+2020-08-30 23:22:29.400879-0700 PyTorchPlayground[18364:1277166] [COPY TO METAL] took 0.104
+2020-08-30 23:22:29.400980-0700 PyTorchPlayground[18364:1277166] [sub] took: 0.071
+2020-08-30 23:22:29.401058-0700 PyTorchPlayground[18364:1277166] [Thread]:<NSThread: 0x280730f80>{number = 6, name = (null)}
+2020-08-30 23:22:29.401170-0700 PyTorchPlayground[18364:1277166] [COPY TO METAL] took 0.117
+2020-08-30 23:22:29.401272-0700 PyTorchPlayground[18364:1277166] [mul] took: 0.075
+2020-08-30 23:22:29.401576-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.204
+2020-08-30 23:22:29.401687-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.067
+2020-08-30 23:22:29.401803-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.065
+2020-08-30 23:22:29.401956-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.098
+2020-08-30 23:22:29.402044-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.051
+2020-08-30 23:22:29.402142-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.055
+2020-08-30 23:22:29.402332-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.121
+2020-08-30 23:22:29.402416-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.048
+2020-08-30 23:22:29.402505-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.051
+2020-08-30 23:22:29.402753-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.194
+2020-08-30 23:22:29.402841-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.049
+2020-08-30 23:22:29.402938-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.059
+2020-08-30 23:22:29.403334-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.339
+2020-08-30 23:22:29.403451-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.073
+2020-08-30 23:22:29.403540-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.049
+2020-08-30 23:22:29.404182-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.572
+2020-08-30 23:22:29.404857-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.586
+2020-08-30 23:22:29.404980-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.067
+2020-08-30 23:22:29.405085-0700 PyTorchPlayground[18364:1277166] [add] took: 0.061
+2020-08-30 23:22:29.405180-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.050
+2020-08-30 23:22:29.405567-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.327
+2020-08-30 23:22:29.405667-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.056
+2020-08-30 23:22:29.405783-0700 PyTorchPlayground[18364:1277166] [add] took: 0.074
+2020-08-30 23:22:29.405870-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.047
+2020-08-30 23:22:29.406093-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.167
+2020-08-30 23:22:29.406190-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.053
+2020-08-30 23:22:29.406280-0700 PyTorchPlayground[18364:1277166] [add] took: 0.051
+2020-08-30 23:22:29.406367-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.046
+2020-08-30 23:22:29.406557-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.134
+2020-08-30 23:22:29.406672-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.071
+2020-08-30 23:22:29.406765-0700 PyTorchPlayground[18364:1277166] [add] took: 0.049
+2020-08-30 23:22:29.406852-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.048
+2020-08-30 23:22:29.406987-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.079
+2020-08-30 23:22:29.407077-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.051
+2020-08-30 23:22:29.407166-0700 PyTorchPlayground[18364:1277166] [add] took: 0.049
+2020-08-30 23:22:29.407253-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.048
+2020-08-30 23:22:29.407406-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.098
+2020-08-30 23:22:29.407512-0700 PyTorchPlayground[18364:1277166] [sigmoid] took: 0.065
+2020-08-30 23:22:29.407629-0700 PyTorchPlayground[18364:1277166] [copy_to_host] took: 0.077
+2020-08-30 23:22:29.418455-0700 PyTorchPlayground[18364:1277166] [Sychronization] took 10.699
+2020-08-30 23:22:29.419440-0700 PyTorchPlayground[18364:1277166] [COPY From METAL] took 0.937
+Segmentation took: 19.5943
+2020-08-30 23:22:29.465390-0700 PyTorchPlayground[18364:1277166] [Thread]:<NSThread: 0x280730f80>{number = 6, name = (null)}
+2020-08-30 23:22:29.466110-0700 PyTorchPlayground[18364:1277166] [COPY TO METAL] took 0.776
+2020-08-30 23:22:29.466256-0700 PyTorchPlayground[18364:1277166] [Thread]:<NSThread: 0x280730f80>{number = 6, name = (null)}
+2020-08-30 23:22:29.466393-0700 PyTorchPlayground[18364:1277166] [COPY TO METAL] took 0.144
+2020-08-30 23:22:29.466499-0700 PyTorchPlayground[18364:1277166] [sub] took: 0.067
+2020-08-30 23:22:29.466580-0700 PyTorchPlayground[18364:1277166] [Thread]:<NSThread: 0x280730f80>{number = 6, name = (null)}
+2020-08-30 23:22:29.466663-0700 PyTorchPlayground[18364:1277166] [COPY TO METAL] took 0.089
+2020-08-30 23:22:29.466748-0700 PyTorchPlayground[18364:1277166] [mul] took: 0.059
+2020-08-30 23:22:29.467069-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.222
+2020-08-30 23:22:29.467181-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.068
+2020-08-30 23:22:29.467306-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.066
+2020-08-30 23:22:29.467490-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.121
+2020-08-30 23:22:29.467585-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.050
+2020-08-30 23:22:29.467671-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.049
+2020-08-30 23:22:29.467865-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.137
+2020-08-30 23:22:29.467951-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.050
+2020-08-30 23:22:29.468040-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.051
+2020-08-30 23:22:29.468296-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.200
+2020-08-30 23:22:29.468408-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.069
+2020-08-30 23:22:29.468498-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.053
+2020-08-30 23:22:29.468968-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.412
+2020-08-30 23:22:29.469107-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.067
+2020-08-30 23:22:29.469215-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.061
+2020-08-30 23:22:29.469816-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.537
+2020-08-30 23:22:29.470691-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.800
+2020-08-30 23:22:29.470834-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.076
+2020-08-30 23:22:29.470966-0700 PyTorchPlayground[18364:1277166] [add] took: 0.070
+2020-08-30 23:22:29.471065-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.052
+2020-08-30 23:22:29.471410-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.284
+2020-08-30 23:22:29.471511-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.055
+2020-08-30 23:22:29.471606-0700 PyTorchPlayground[18364:1277166] [add] took: 0.053
+2020-08-30 23:22:29.471696-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.051
+2020-08-30 23:22:29.471942-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.188
+2020-08-30 23:22:29.472043-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.056
+2020-08-30 23:22:29.472145-0700 PyTorchPlayground[18364:1277166] [add] took: 0.057
+2020-08-30 23:22:29.472244-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.051
+2020-08-30 23:22:29.472423-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.125
+2020-08-30 23:22:29.472534-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.069
+2020-08-30 23:22:29.472628-0700 PyTorchPlayground[18364:1277166] [add] took: 0.052
+2020-08-30 23:22:29.472718-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.050
+2020-08-30 23:22:29.472880-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.106
+2020-08-30 23:22:29.472980-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.055
+2020-08-30 23:22:29.473072-0700 PyTorchPlayground[18364:1277166] [add] took: 0.052
+2020-08-30 23:22:29.473160-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.048
+2020-08-30 23:22:29.473314-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.100
+2020-08-30 23:22:29.473408-0700 PyTorchPlayground[18364:1277166] [sigmoid] took: 0.056
+2020-08-30 23:22:29.473522-0700 PyTorchPlayground[18364:1277166] [copy_to_host] took: 0.077
+2020-08-30 23:22:29.484237-0700 PyTorchPlayground[18364:1277166] [Sychronization] took 10.587
+2020-08-30 23:22:29.485104-0700 PyTorchPlayground[18364:1277166] [COPY From METAL] took 0.831
+Segmentation took: 19.9196
+2020-08-30 23:22:29.529156-0700 PyTorchPlayground[18364:1277166] [Thread]:<NSThread: 0x280730f80>{number = 6, name = (null)}
+2020-08-30 23:22:29.529793-0700 PyTorchPlayground[18364:1277166] [COPY TO METAL] took 0.682
+2020-08-30 23:22:29.529943-0700 PyTorchPlayground[18364:1277166] [Thread]:<NSThread: 0x280730f80>{number = 6, name = (null)}
+2020-08-30 23:22:29.530058-0700 PyTorchPlayground[18364:1277166] [COPY TO METAL] took 0.126
+2020-08-30 23:22:29.530157-0700 PyTorchPlayground[18364:1277166] [sub] took: 0.063
+2020-08-30 23:22:29.530235-0700 PyTorchPlayground[18364:1277166] [Thread]:<NSThread: 0x280730f80>{number = 6, name = (null)}
+2020-08-30 23:22:29.530309-0700 PyTorchPlayground[18364:1277166] [COPY TO METAL] took 0.079
+2020-08-30 23:22:29.530390-0700 PyTorchPlayground[18364:1277166] [mul] took: 0.053
+2020-08-30 23:22:29.530603-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.139
+2020-08-30 23:22:29.530724-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.079
+2020-08-30 23:22:29.530856-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.071
+2020-08-30 23:22:29.531017-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.102
+2020-08-30 23:22:29.531105-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.050
+2020-08-30 23:22:29.531195-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.051
+2020-08-30 23:22:29.531394-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.141
+2020-08-30 23:22:29.531479-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.048
+2020-08-30 23:22:29.531564-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.049
+2020-08-30 23:22:29.531845-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.225
+2020-08-30 23:22:29.531955-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.059
+2020-08-30 23:22:29.532060-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.061
+2020-08-30 23:22:29.532462-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.341
+2020-08-30 23:22:29.532555-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.050
+2020-08-30 23:22:29.532644-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.050
+2020-08-30 23:22:29.533341-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.637
+2020-08-30 23:22:29.533910-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.499
+2020-08-30 23:22:29.534033-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.070
+2020-08-30 23:22:29.534143-0700 PyTorchPlayground[18364:1277166] [add] took: 0.065
+2020-08-30 23:22:29.534232-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.049
+2020-08-30 23:22:29.534667-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.378
+2020-08-30 23:22:29.534791-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.077
+2020-08-30 23:22:29.534885-0700 PyTorchPlayground[18364:1277166] [add] took: 0.055
+2020-08-30 23:22:29.534972-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.047
+2020-08-30 23:22:29.535213-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.186
+2020-08-30 23:22:29.535310-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.054
+2020-08-30 23:22:29.535409-0700 PyTorchPlayground[18364:1277166] [add] took: 0.060
+2020-08-30 23:22:29.535506-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.058
+2020-08-30 23:22:29.535680-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.121
+2020-08-30 23:22:29.535815-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.079
+2020-08-30 23:22:29.535909-0700 PyTorchPlayground[18364:1277166] [add] took: 0.051
+2020-08-30 23:22:29.536005-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.047
+2020-08-30 23:22:29.536144-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.082
+2020-08-30 23:22:29.536239-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.054
+2020-08-30 23:22:29.536330-0700 PyTorchPlayground[18364:1277166] [add] took: 0.054
+2020-08-30 23:22:29.536415-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.048
+2020-08-30 23:22:29.536586-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.117
+2020-08-30 23:22:29.536680-0700 PyTorchPlayground[18364:1277166] [sigmoid] took: 0.057
+2020-08-30 23:22:29.537128-0700 PyTorchPlayground[18364:1277166] [copy_to_host] took: 0.409
+2020-08-30 23:22:29.548170-0700 PyTorchPlayground[18364:1277166] [Sychronization] took 10.909
+2020-08-30 23:22:29.549105-0700 PyTorchPlayground[18364:1277166] [COPY From METAL] took 0.900
+Segmentation took: 20.1375
+2020-08-30 23:22:29.595098-0700 PyTorchPlayground[18364:1277166] [Thread]:<NSThread: 0x280730f80>{number = 6, name = (null)}
+2020-08-30 23:22:29.595763-0700 PyTorchPlayground[18364:1277166] [COPY TO METAL] took 0.710
+2020-08-30 23:22:29.595904-0700 PyTorchPlayground[18364:1277166] [Thread]:<NSThread: 0x280730f80>{number = 6, name = (null)}
+2020-08-30 23:22:29.596033-0700 PyTorchPlayground[18364:1277166] [COPY TO METAL] took 0.135
+2020-08-30 23:22:29.596133-0700 PyTorchPlayground[18364:1277166] [sub] took: 0.070
+2020-08-30 23:22:29.596218-0700 PyTorchPlayground[18364:1277166] [Thread]:<NSThread: 0x280730f80>{number = 6, name = (null)}
+2020-08-30 23:22:29.596296-0700 PyTorchPlayground[18364:1277166] [COPY TO METAL] took 0.083
+2020-08-30 23:22:29.596376-0700 PyTorchPlayground[18364:1277166] [mul] took: 0.054
+2020-08-30 23:22:29.596592-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.133
+2020-08-30 23:22:29.596691-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.058
+2020-08-30 23:22:29.596796-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.058
+2020-08-30 23:22:29.596966-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.112
+2020-08-30 23:22:29.597065-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.048
+2020-08-30 23:22:29.597153-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.051
+2020-08-30 23:22:29.597327-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.118
+2020-08-30 23:22:29.597413-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.047
+2020-08-30 23:22:29.597501-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.051
+2020-08-30 23:22:29.597741-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.180
+2020-08-30 23:22:29.597834-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.055
+2020-08-30 23:22:29.597928-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.055
+2020-08-30 23:22:29.598301-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.317
+2020-08-30 23:22:29.598392-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.049
+2020-08-30 23:22:29.598490-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.058
+2020-08-30 23:22:29.599183-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.636
+2020-08-30 23:22:29.599808-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.558
+2020-08-30 23:22:29.599945-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.075
+2020-08-30 23:22:29.600086-0700 PyTorchPlayground[18364:1277166] [add] took: 0.090
+2020-08-30 23:22:29.600196-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.060
+2020-08-30 23:22:29.600625-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.368
+2020-08-30 23:22:29.600733-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.061
+2020-08-30 23:22:29.600846-0700 PyTorchPlayground[18364:1277166] [add] took: 0.067
+2020-08-30 23:22:29.600940-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.053
+2020-08-30 23:22:29.601172-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.174
+2020-08-30 23:22:29.601266-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.053
+2020-08-30 23:22:29.601364-0700 PyTorchPlayground[18364:1277166] [add] took: 0.050
+2020-08-30 23:22:29.601456-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.052
+2020-08-30 23:22:29.601639-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.128
+2020-08-30 23:22:29.601750-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.072
+2020-08-30 23:22:29.601839-0700 PyTorchPlayground[18364:1277166] [add] took: 0.050
+2020-08-30 23:22:29.601926-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.049
+2020-08-30 23:22:29.602069-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.088
+2020-08-30 23:22:29.602162-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.054
+2020-08-30 23:22:29.602278-0700 PyTorchPlayground[18364:1277166] [add] took: 0.077
+2020-08-30 23:22:29.602368-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.050
+2020-08-30 23:22:29.602543-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.115
+2020-08-30 23:22:29.602637-0700 PyTorchPlayground[18364:1277166] [sigmoid] took: 0.057
+2020-08-30 23:22:29.602757-0700 PyTorchPlayground[18364:1277166] [copy_to_host] took: 0.081
+2020-08-30 23:22:29.614574-0700 PyTorchPlayground[18364:1277166] [Sychronization] took 11.677
+2020-08-30 23:22:29.615580-0700 PyTorchPlayground[18364:1277166] [COPY From METAL] took 0.965
+Segmentation took: 20.6877
+2020-08-30 23:22:29.660462-0700 PyTorchPlayground[18364:1277166] [Thread]:<NSThread: 0x280730f80>{number = 6, name = (null)}
+2020-08-30 23:22:29.661082-0700 PyTorchPlayground[18364:1277166] [COPY TO METAL] took 0.671
+2020-08-30 23:22:29.661222-0700 PyTorchPlayground[18364:1277166] [Thread]:<NSThread: 0x280730f80>{number = 6, name = (null)}
+2020-08-30 23:22:29.661333-0700 PyTorchPlayground[18364:1277166] [COPY TO METAL] took 0.121
+2020-08-30 23:22:29.661426-0700 PyTorchPlayground[18364:1277166] [sub] took: 0.062
+2020-08-30 23:22:29.661506-0700 PyTorchPlayground[18364:1277166] [Thread]:<NSThread: 0x280730f80>{number = 6, name = (null)}
+2020-08-30 23:22:29.661588-0700 PyTorchPlayground[18364:1277166] [COPY TO METAL] took 0.088
+2020-08-30 23:22:29.661672-0700 PyTorchPlayground[18364:1277166] [mul] took: 0.058
+2020-08-30 23:22:29.661915-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.166
+2020-08-30 23:22:29.662028-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.070
+2020-08-30 23:22:29.662144-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.064
+2020-08-30 23:22:29.662302-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.094
+2020-08-30 23:22:29.662387-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.048
+2020-08-30 23:22:29.662483-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.059
+2020-08-30 23:22:29.662660-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.121
+2020-08-30 23:22:29.662754-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.051
+2020-08-30 23:22:29.662841-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.049
+2020-08-30 23:22:29.663086-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.190
+2020-08-30 23:22:29.663177-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.052
+2020-08-30 23:22:29.663277-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.062
+2020-08-30 23:22:29.663775-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.442
+2020-08-30 23:22:29.663888-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.059
+2020-08-30 23:22:29.663988-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.055
+2020-08-30 23:22:29.664692-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.641
+2020-08-30 23:22:29.665287-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.531
+2020-08-30 23:22:29.665410-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.068
+2020-08-30 23:22:29.665528-0700 PyTorchPlayground[18364:1277166] [add] took: 0.066
+2020-08-30 23:22:29.665645-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.063
+2020-08-30 23:22:29.666094-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.379
+2020-08-30 23:22:29.666201-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.058
+2020-08-30 23:22:29.666304-0700 PyTorchPlayground[18364:1277166] [add] took: 0.060
+2020-08-30 23:22:29.666396-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.048
+2020-08-30 23:22:29.666650-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.191
+2020-08-30 23:22:29.666759-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.059
+2020-08-30 23:22:29.666869-0700 PyTorchPlayground[18364:1277166] [add] took: 0.069
+2020-08-30 23:22:29.666959-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.049
+2020-08-30 23:22:29.667140-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.122
+2020-08-30 23:22:29.667250-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.068
+2020-08-30 23:22:29.667369-0700 PyTorchPlayground[18364:1277166] [add] took: 0.073
+2020-08-30 23:22:29.667469-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.053
+2020-08-30 23:22:29.667600-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.079
+2020-08-30 23:22:29.667693-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.054
+2020-08-30 23:22:29.667782-0700 PyTorchPlayground[18364:1277166] [add] took: 0.053
+2020-08-30 23:22:29.667867-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.046
+2020-08-30 23:22:29.668030-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.107
+2020-08-30 23:22:29.668124-0700 PyTorchPlayground[18364:1277166] [sigmoid] took: 0.059
+2020-08-30 23:22:29.668242-0700 PyTorchPlayground[18364:1277166] [copy_to_host] took: 0.080
+2020-08-30 23:22:29.680060-0700 PyTorchPlayground[18364:1277166] [Sychronization] took 11.672
+2020-08-30 23:22:29.681096-0700 PyTorchPlayground[18364:1277166] [COPY From METAL] took 0.969
+Segmentation took: 20.8475
+2020-08-30 23:22:29.725649-0700 PyTorchPlayground[18364:1277166] [Thread]:<NSThread: 0x280730f80>{number = 6, name = (null)}
+2020-08-30 23:22:29.726221-0700 PyTorchPlayground[18364:1277166] [COPY TO METAL] took 0.618
+2020-08-30 23:22:29.726368-0700 PyTorchPlayground[18364:1277166] [Thread]:<NSThread: 0x280730f80>{number = 6, name = (null)}
+2020-08-30 23:22:29.726489-0700 PyTorchPlayground[18364:1277166] [COPY TO METAL] took 0.126
+2020-08-30 23:22:29.726589-0700 PyTorchPlayground[18364:1277166] [sub] took: 0.071
+2020-08-30 23:22:29.726669-0700 PyTorchPlayground[18364:1277166] [Thread]:<NSThread: 0x280730f80>{number = 6, name = (null)}
+2020-08-30 23:22:29.726767-0700 PyTorchPlayground[18364:1277166] [COPY TO METAL] took 0.103
+2020-08-30 23:22:29.726849-0700 PyTorchPlayground[18364:1277166] [mul] took: 0.055
+2020-08-30 23:22:29.727044-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.119
+2020-08-30 23:22:29.727164-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.070
+2020-08-30 23:22:29.727280-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.065
+2020-08-30 23:22:29.727451-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.103
+2020-08-30 23:22:29.727544-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.052
+2020-08-30 23:22:29.727651-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.068
+2020-08-30 23:22:29.727866-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.155
+2020-08-30 23:22:29.727955-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.051
+2020-08-30 23:22:29.728045-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.050
+2020-08-30 23:22:29.728287-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.187
+2020-08-30 23:22:29.728393-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.066
+2020-08-30 23:22:29.728483-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.052
+2020-08-30 23:22:29.728905-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.367
+2020-08-30 23:22:29.729024-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.062
+2020-08-30 23:22:29.729119-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.053
+2020-08-30 23:22:29.729785-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.604
+2020-08-30 23:22:29.730341-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.492
+2020-08-30 23:22:29.730468-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.074
+2020-08-30 23:22:29.730586-0700 PyTorchPlayground[18364:1277166] [add] took: 0.074
+2020-08-30 23:22:29.730686-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.057
+2020-08-30 23:22:29.731115-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.372
+2020-08-30 23:22:29.731226-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.067
+2020-08-30 23:22:29.731324-0700 PyTorchPlayground[18364:1277166] [add] took: 0.056
+2020-08-30 23:22:29.731417-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.052
+2020-08-30 23:22:29.731709-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.234
+2020-08-30 23:22:29.731809-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.056
+2020-08-30 23:22:29.731903-0700 PyTorchPlayground[18364:1277166] [add] took: 0.053
+2020-08-30 23:22:29.732004-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.054
+2020-08-30 23:22:29.732200-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.140
+2020-08-30 23:22:29.732313-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.072
+2020-08-30 23:22:29.732406-0700 PyTorchPlayground[18364:1277166] [add] took: 0.052
+2020-08-30 23:22:29.732492-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.047
+2020-08-30 23:22:29.732626-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.081
+2020-08-30 23:22:29.732722-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.057
+2020-08-30 23:22:29.732813-0700 PyTorchPlayground[18364:1277166] [add] took: 0.052
+2020-08-30 23:22:29.732900-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.048
+2020-08-30 23:22:29.733063-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.107
+2020-08-30 23:22:29.733158-0700 PyTorchPlayground[18364:1277166] [sigmoid] took: 0.057
+2020-08-30 23:22:29.733270-0700 PyTorchPlayground[18364:1277166] [copy_to_host] took: 0.074
+2020-08-30 23:22:29.744670-0700 PyTorchPlayground[18364:1277166] [Sychronization] took 11.242
+2020-08-30 23:22:29.745871-0700 PyTorchPlayground[18364:1277166] [COPY From METAL] took 1.103
+Segmentation took: 20.4266
+2020-08-30 23:22:29.795590-0700 PyTorchPlayground[18364:1277166] [Thread]:<NSThread: 0x280730f80>{number = 6, name = (null)}
+2020-08-30 23:22:29.796262-0700 PyTorchPlayground[18364:1277166] [COPY TO METAL] took 0.700
+2020-08-30 23:22:29.796403-0700 PyTorchPlayground[18364:1277166] [Thread]:<NSThread: 0x280730f80>{number = 6, name = (null)}
+2020-08-30 23:22:29.796510-0700 PyTorchPlayground[18364:1277166] [COPY TO METAL] took 0.114
+2020-08-30 23:22:29.796616-0700 PyTorchPlayground[18364:1277166] [sub] took: 0.076
+2020-08-30 23:22:29.796698-0700 PyTorchPlayground[18364:1277166] [Thread]:<NSThread: 0x280730f80>{number = 6, name = (null)}
+2020-08-30 23:22:29.796791-0700 PyTorchPlayground[18364:1277166] [COPY TO METAL] took 0.099
+2020-08-30 23:22:29.796874-0700 PyTorchPlayground[18364:1277166] [mul] took: 0.055
+2020-08-30 23:22:29.797111-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.160
+2020-08-30 23:22:29.797217-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.065
+2020-08-30 23:22:29.797336-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.064
+2020-08-30 23:22:29.797489-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.094
+2020-08-30 23:22:29.797582-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.056
+2020-08-30 23:22:29.797680-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.059
+2020-08-30 23:22:29.797851-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.113
+2020-08-30 23:22:29.797942-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.052
+2020-08-30 23:22:29.798046-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.066
+2020-08-30 23:22:29.798329-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.224
+2020-08-30 23:22:29.798442-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.064
+2020-08-30 23:22:29.798543-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.059
+2020-08-30 23:22:29.798932-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.328
+2020-08-30 23:22:29.799035-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.053
+2020-08-30 23:22:29.799125-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.050
+2020-08-30 23:22:29.799785-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.601
+2020-08-30 23:22:29.800413-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.553
+2020-08-30 23:22:29.800537-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.070
+2020-08-30 23:22:29.800639-0700 PyTorchPlayground[18364:1277166] [add] took: 0.059
+2020-08-30 23:22:29.800730-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.050
+2020-08-30 23:22:29.801211-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.423
+2020-08-30 23:22:29.801318-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.061
+2020-08-30 23:22:29.801414-0700 PyTorchPlayground[18364:1277166] [add] took: 0.057
+2020-08-30 23:22:29.801528-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.072
+2020-08-30 23:22:29.801827-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.245
+2020-08-30 23:22:29.801937-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.060
+2020-08-30 23:22:29.802040-0700 PyTorchPlayground[18364:1277166] [add] took: 0.061
+2020-08-30 23:22:29.802131-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.051
+2020-08-30 23:22:29.802312-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.127
+2020-08-30 23:22:29.802452-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.099
+2020-08-30 23:22:29.802545-0700 PyTorchPlayground[18364:1277166] [add] took: 0.054
+2020-08-30 23:22:29.802632-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.049
+2020-08-30 23:22:29.802768-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.082
+2020-08-30 23:22:29.802862-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.055
+2020-08-30 23:22:29.802950-0700 PyTorchPlayground[18364:1277166] [add] took: 0.049
+2020-08-30 23:22:29.803037-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.050
+2020-08-30 23:22:29.803197-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.098
+2020-08-30 23:22:29.803307-0700 PyTorchPlayground[18364:1277166] [sigmoid] took: 0.074
+2020-08-30 23:22:29.803427-0700 PyTorchPlayground[18364:1277166] [copy_to_host] took: 0.081
+2020-08-30 23:22:29.814589-0700 PyTorchPlayground[18364:1277166] [Sychronization] took 11.026
+2020-08-30 23:22:29.815493-0700 PyTorchPlayground[18364:1277166] [COPY From METAL] took 0.859
+Segmentation took: 20.0819
+2020-08-30 23:22:29.871171-0700 PyTorchPlayground[18364:1277166] [Thread]:<NSThread: 0x280730f80>{number = 6, name = (null)}
+2020-08-30 23:22:29.872058-0700 PyTorchPlayground[18364:1277166] [COPY TO METAL] took 0.950
+2020-08-30 23:22:29.872191-0700 PyTorchPlayground[18364:1277166] [Thread]:<NSThread: 0x280730f80>{number = 6, name = (null)}
+2020-08-30 23:22:29.872301-0700 PyTorchPlayground[18364:1277166] [COPY TO METAL] took 0.116
+2020-08-30 23:22:29.872403-0700 PyTorchPlayground[18364:1277166] [sub] took: 0.072
+2020-08-30 23:22:29.872486-0700 PyTorchPlayground[18364:1277166] [Thread]:<NSThread: 0x280730f80>{number = 6, name = (null)}
+2020-08-30 23:22:29.872561-0700 PyTorchPlayground[18364:1277166] [COPY TO METAL] took 0.080
+2020-08-30 23:22:29.872642-0700 PyTorchPlayground[18364:1277166] [mul] took: 0.053
+2020-08-30 23:22:29.872838-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.121
+2020-08-30 23:22:29.872935-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.057
+2020-08-30 23:22:29.873040-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.059
+2020-08-30 23:22:29.873201-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.097
+2020-08-30 23:22:29.873322-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.083
+2020-08-30 23:22:29.873409-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.050
+2020-08-30 23:22:29.873589-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.125
+2020-08-30 23:22:29.873674-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.048
+2020-08-30 23:22:29.873764-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.053
+2020-08-30 23:22:29.874041-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.221
+2020-08-30 23:22:29.874152-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.061
+2020-08-30 23:22:29.874252-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.057
+2020-08-30 23:22:29.874648-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.330
+2020-08-30 23:22:29.874743-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.051
+2020-08-30 23:22:29.874838-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.054
+2020-08-30 23:22:29.875486-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.590
+2020-08-30 23:22:29.876099-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.538
+2020-08-30 23:22:29.876219-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.067
+2020-08-30 23:22:29.876384-0700 PyTorchPlayground[18364:1277166] [add] took: 0.120
+2020-08-30 23:22:29.876509-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.081
+2020-08-30 23:22:29.876924-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.353
+2020-08-30 23:22:29.877045-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.075
+2020-08-30 23:22:29.877145-0700 PyTorchPlayground[18364:1277166] [add] took: 0.058
+2020-08-30 23:22:29.877234-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.049
+2020-08-30 23:22:29.877490-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.201
+2020-08-30 23:22:29.877586-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.054
+2020-08-30 23:22:29.877679-0700 PyTorchPlayground[18364:1277166] [add] took: 0.052
+2020-08-30 23:22:29.877774-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.048
+2020-08-30 23:22:29.877960-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.128
+2020-08-30 23:22:29.878113-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.108
+2020-08-30 23:22:29.878202-0700 PyTorchPlayground[18364:1277166] [add] took: 0.050
+2020-08-30 23:22:29.878297-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.055
+2020-08-30 23:22:29.878435-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.083
+2020-08-30 23:22:29.878529-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.054
+2020-08-30 23:22:29.878638-0700 PyTorchPlayground[18364:1277166] [add] took: 0.070
+2020-08-30 23:22:29.878729-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.052
+2020-08-30 23:22:29.878886-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.102
+2020-08-30 23:22:29.878983-0700 PyTorchPlayground[18364:1277166] [sigmoid] took: 0.060
+2020-08-30 23:22:29.879098-0700 PyTorchPlayground[18364:1277166] [copy_to_host] took: 0.076
+2020-08-30 23:22:29.890974-0700 PyTorchPlayground[18364:1277166] [Sychronization] took 11.744
+2020-08-30 23:22:29.891998-0700 PyTorchPlayground[18364:1277166] [COPY From METAL] took 0.970
+Segmentation took: 21.0638
+2020-08-30 23:22:29.942569-0700 PyTorchPlayground[18364:1277166] [Thread]:<NSThread: 0x280730f80>{number = 6, name = (null)}
+2020-08-30 23:22:29.943230-0700 PyTorchPlayground[18364:1277166] [COPY TO METAL] took 0.707
+2020-08-30 23:22:29.943374-0700 PyTorchPlayground[18364:1277166] [Thread]:<NSThread: 0x280730f80>{number = 6, name = (null)}
+2020-08-30 23:22:29.943466-0700 PyTorchPlayground[18364:1277166] [COPY TO METAL] took 0.099
+2020-08-30 23:22:29.943557-0700 PyTorchPlayground[18364:1277166] [sub] took: 0.062
+2020-08-30 23:22:29.943645-0700 PyTorchPlayground[18364:1277166] [Thread]:<NSThread: 0x280730f80>{number = 6, name = (null)}
+2020-08-30 23:22:29.943728-0700 PyTorchPlayground[18364:1277166] [COPY TO METAL] took 0.089
+2020-08-30 23:22:29.943815-0700 PyTorchPlayground[18364:1277166] [mul] took: 0.056
+2020-08-30 23:22:29.944073-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.168
+2020-08-30 23:22:29.944192-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.072
+2020-08-30 23:22:29.944314-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.065
+2020-08-30 23:22:29.944470-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.094
+2020-08-30 23:22:29.944563-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.048
+2020-08-30 23:22:29.944651-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.049
+2020-08-30 23:22:29.944831-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.121
+2020-08-30 23:22:29.944917-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.047
+2020-08-30 23:22:29.945008-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.052
+2020-08-30 23:22:29.945312-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.243
+2020-08-30 23:22:29.945404-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.052
+2020-08-30 23:22:29.945495-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.053
+2020-08-30 23:22:29.945907-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.356
+2020-08-30 23:22:29.946024-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.064
+2020-08-30 23:22:29.946121-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.054
+2020-08-30 23:22:29.946862-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.667
+2020-08-30 23:22:29.947499-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.546
+2020-08-30 23:22:29.947626-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.070
+2020-08-30 23:22:29.947740-0700 PyTorchPlayground[18364:1277166] [add] took: 0.064
+2020-08-30 23:22:29.947833-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.049
+2020-08-30 23:22:29.948358-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.412
+2020-08-30 23:22:29.948510-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.070
+2020-08-30 23:22:29.948624-0700 PyTorchPlayground[18364:1277166] [add] took: 0.069
+2020-08-30 23:22:29.948719-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.053
+2020-08-30 23:22:29.949003-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.218
+2020-08-30 23:22:29.949111-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.056
+2020-08-30 23:22:29.949207-0700 PyTorchPlayground[18364:1277166] [add] took: 0.055
+2020-08-30 23:22:29.949295-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.048
+2020-08-30 23:22:29.949505-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.154
+2020-08-30 23:22:29.949616-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.071
+2020-08-30 23:22:29.949717-0700 PyTorchPlayground[18364:1277166] [add] took: 0.061
+2020-08-30 23:22:29.949830-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.068
+2020-08-30 23:22:29.949972-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.088
+2020-08-30 23:22:29.950072-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.054
+2020-08-30 23:22:29.950163-0700 PyTorchPlayground[18364:1277166] [add] took: 0.051
+2020-08-30 23:22:29.950248-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.047
+2020-08-30 23:22:29.950401-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.099
+2020-08-30 23:22:29.950510-0700 PyTorchPlayground[18364:1277166] [sigmoid] took: 0.065
+2020-08-30 23:22:29.950628-0700 PyTorchPlayground[18364:1277166] [copy_to_host] took: 0.077
+2020-08-30 23:22:29.962020-0700 PyTorchPlayground[18364:1277166] [Sychronization] took 11.255
+2020-08-30 23:22:29.963058-0700 PyTorchPlayground[18364:1277166] [COPY From METAL] took 0.970
+Segmentation took: 20.6868
+2020-08-30 23:22:30.006896-0700 PyTorchPlayground[18364:1277166] [Thread]:<NSThread: 0x280730f80>{number = 6, name = (null)}
+2020-08-30 23:22:30.007541-0700 PyTorchPlayground[18364:1277166] [COPY TO METAL] took 0.693
+2020-08-30 23:22:30.007680-0700 PyTorchPlayground[18364:1277166] [Thread]:<NSThread: 0x280730f80>{number = 6, name = (null)}
+2020-08-30 23:22:30.007790-0700 PyTorchPlayground[18364:1277166] [COPY TO METAL] took 0.116
+2020-08-30 23:22:30.007881-0700 PyTorchPlayground[18364:1277166] [sub] took: 0.062
+2020-08-30 23:22:30.007960-0700 PyTorchPlayground[18364:1277166] [Thread]:<NSThread: 0x280730f80>{number = 6, name = (null)}
+2020-08-30 23:22:30.008054-0700 PyTorchPlayground[18364:1277166] [COPY TO METAL] took 0.098
+2020-08-30 23:22:30.008134-0700 PyTorchPlayground[18364:1277166] [mul] took: 0.053
+2020-08-30 23:22:30.008362-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.141
+2020-08-30 23:22:30.008475-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.067
+2020-08-30 23:22:30.008590-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.062
+2020-08-30 23:22:30.008753-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.106
+2020-08-30 23:22:30.008840-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.048
+2020-08-30 23:22:30.008925-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.048
+2020-08-30 23:22:30.009096-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.116
+2020-08-30 23:22:30.009183-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.051
+2020-08-30 23:22:30.009268-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.047
+2020-08-30 23:22:30.009536-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.212
+2020-08-30 23:22:30.009651-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.064
+2020-08-30 23:22:30.009752-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.058
+2020-08-30 23:22:30.010159-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.347
+2020-08-30 23:22:30.010254-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.052
+2020-08-30 23:22:30.010344-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.050
+2020-08-30 23:22:30.010967-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.565
+2020-08-30 23:22:30.011576-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.535
+2020-08-30 23:22:30.011695-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.067
+2020-08-30 23:22:30.011816-0700 PyTorchPlayground[18364:1277166] [add] took: 0.061
+2020-08-30 23:22:30.011913-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.052
+2020-08-30 23:22:30.012367-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.397
+2020-08-30 23:22:30.012464-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.054
+2020-08-30 23:22:30.012561-0700 PyTorchPlayground[18364:1277166] [add] took: 0.054
+2020-08-30 23:22:30.012656-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.055
+2020-08-30 23:22:30.012880-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.168
+2020-08-30 23:22:30.012977-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.055
+2020-08-30 23:22:30.013065-0700 PyTorchPlayground[18364:1277166] [add] took: 0.050
+2020-08-30 23:22:30.013152-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.049
+2020-08-30 23:22:30.013348-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.141
+2020-08-30 23:22:30.013461-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.070
+2020-08-30 23:22:30.013553-0700 PyTorchPlayground[18364:1277166] [add] took: 0.052
+2020-08-30 23:22:30.013645-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.051
+2020-08-30 23:22:30.013791-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.085
+2020-08-30 23:22:30.013887-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.054
+2020-08-30 23:22:30.013975-0700 PyTorchPlayground[18364:1277166] [add] took: 0.050
+2020-08-30 23:22:30.014058-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.046
+2020-08-30 23:22:30.014214-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.101
+2020-08-30 23:22:30.014313-0700 PyTorchPlayground[18364:1277166] [sigmoid] took: 0.058
+2020-08-30 23:22:30.014432-0700 PyTorchPlayground[18364:1277166] [copy_to_host] took: 0.081
+2020-08-30 23:22:30.025292-0700 PyTorchPlayground[18364:1277166] [Sychronization] took 10.711
+2020-08-30 23:22:30.026432-0700 PyTorchPlayground[18364:1277166] [COPY From METAL] took 1.064
+Segmentation took: 19.7437
+2020-08-30 23:22:30.075825-0700 PyTorchPlayground[18364:1277166] [Thread]:<NSThread: 0x280730f80>{number = 6, name = (null)}
+2020-08-30 23:22:30.076432-0700 PyTorchPlayground[18364:1277166] [COPY TO METAL] took 0.650
+2020-08-30 23:22:30.076580-0700 PyTorchPlayground[18364:1277166] [Thread]:<NSThread: 0x280730f80>{number = 6, name = (null)}
+2020-08-30 23:22:30.076677-0700 PyTorchPlayground[18364:1277166] [COPY TO METAL] took 0.108
+2020-08-30 23:22:30.076772-0700 PyTorchPlayground[18364:1277166] [sub] took: 0.065
+2020-08-30 23:22:30.076849-0700 PyTorchPlayground[18364:1277166] [Thread]:<NSThread: 0x280730f80>{number = 6, name = (null)}
+2020-08-30 23:22:30.076922-0700 PyTorchPlayground[18364:1277166] [COPY TO METAL] took 0.078
+2020-08-30 23:22:30.077001-0700 PyTorchPlayground[18364:1277166] [mul] took: 0.053
+2020-08-30 23:22:30.077258-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.161
+2020-08-30 23:22:30.077390-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.069
+2020-08-30 23:22:30.077517-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.076
+2020-08-30 23:22:30.077679-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.103
+2020-08-30 23:22:30.077771-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.054
+2020-08-30 23:22:30.077859-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.049
+2020-08-30 23:22:30.078032-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.114
+2020-08-30 23:22:30.078138-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.068
+2020-08-30 23:22:30.078226-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.049
+2020-08-30 23:22:30.078535-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.254
+2020-08-30 23:22:30.078627-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.050
+2020-08-30 23:22:30.078719-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.053
+2020-08-30 23:22:30.079110-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.332
+2020-08-30 23:22:30.079204-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.053
+2020-08-30 23:22:30.079294-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.050
+2020-08-30 23:22:30.079920-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.570
+2020-08-30 23:22:30.080629-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.642
+2020-08-30 23:22:30.080782-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.081
+2020-08-30 23:22:30.080899-0700 PyTorchPlayground[18364:1277166] [add] took: 0.063
+2020-08-30 23:22:30.081015-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.072
+2020-08-30 23:22:30.081452-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.370
+2020-08-30 23:22:30.081561-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.063
+2020-08-30 23:22:30.081660-0700 PyTorchPlayground[18364:1277166] [add] took: 0.058
+2020-08-30 23:22:30.081753-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.053
+2020-08-30 23:22:30.082013-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.205
+2020-08-30 23:22:30.082112-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.056
+2020-08-30 23:22:30.082212-0700 PyTorchPlayground[18364:1277166] [add] took: 0.060
+2020-08-30 23:22:30.082302-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.050
+2020-08-30 23:22:30.082477-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.119
+2020-08-30 23:22:30.082595-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.073
+2020-08-30 23:22:30.082686-0700 PyTorchPlayground[18364:1277166] [add] took: 0.051
+2020-08-30 23:22:30.082777-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.053
+2020-08-30 23:22:30.082915-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.083
+2020-08-30 23:22:30.083012-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.057
+2020-08-30 23:22:30.083102-0700 PyTorchPlayground[18364:1277166] [add] took: 0.051
+2020-08-30 23:22:30.083193-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.051
+2020-08-30 23:22:30.083349-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.096
+2020-08-30 23:22:30.083443-0700 PyTorchPlayground[18364:1277166] [sigmoid] took: 0.056
+2020-08-30 23:22:30.083577-0700 PyTorchPlayground[18364:1277166] [copy_to_host] took: 0.096
+2020-08-30 23:22:30.095015-0700 PyTorchPlayground[18364:1277166] [Sychronization] took 11.237
+2020-08-30 23:22:30.096062-0700 PyTorchPlayground[18364:1277166] [COPY From METAL] took 0.983
+Segmentation took: 20.4305
+2020-08-30 23:22:30.145208-0700 PyTorchPlayground[18364:1277166] [Thread]:<NSThread: 0x280730f80>{number = 6, name = (null)}
+2020-08-30 23:22:30.145869-0700 PyTorchPlayground[18364:1277166] [COPY TO METAL] took 0.701
+2020-08-30 23:22:30.146021-0700 PyTorchPlayground[18364:1277166] [Thread]:<NSThread: 0x280730f80>{number = 6, name = (null)}
+2020-08-30 23:22:30.146121-0700 PyTorchPlayground[18364:1277166] [COPY TO METAL] took 0.109
+2020-08-30 23:22:30.146218-0700 PyTorchPlayground[18364:1277166] [sub] took: 0.067
+2020-08-30 23:22:30.146297-0700 PyTorchPlayground[18364:1277166] [Thread]:<NSThread: 0x280730f80>{number = 6, name = (null)}
+2020-08-30 23:22:30.146371-0700 PyTorchPlayground[18364:1277166] [COPY TO METAL] took 0.079
+2020-08-30 23:22:30.146451-0700 PyTorchPlayground[18364:1277166] [mul] took: 0.054
+2020-08-30 23:22:30.146767-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.240
+2020-08-30 23:22:30.146890-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.078
+2020-08-30 23:22:30.147011-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.069
+2020-08-30 23:22:30.147168-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.098
+2020-08-30 23:22:30.147257-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.051
+2020-08-30 23:22:30.147344-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.048
+2020-08-30 23:22:30.147540-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.139
+2020-08-30 23:22:30.147638-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.057
+2020-08-30 23:22:30.147727-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.049
+2020-08-30 23:22:30.147973-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.191
+2020-08-30 23:22:30.148068-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.055
+2020-08-30 23:22:30.148159-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.051
+2020-08-30 23:22:30.148524-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.309
+2020-08-30 23:22:30.148626-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.049
+2020-08-30 23:22:30.148722-0700 PyTorchPlayground[18364:1277166] [maxpool_2d] took: 0.057
+2020-08-30 23:22:30.149482-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.694
+2020-08-30 23:22:30.150094-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.529
+2020-08-30 23:22:30.150231-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.077
+2020-08-30 23:22:30.150339-0700 PyTorchPlayground[18364:1277166] [add] took: 0.062
+2020-08-30 23:22:30.150435-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.052
+2020-08-30 23:22:30.150884-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.391
+2020-08-30 23:22:30.150988-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.057
+2020-08-30 23:22:30.151090-0700 PyTorchPlayground[18364:1277166] [add] took: 0.057
+2020-08-30 23:22:30.151178-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.048
+2020-08-30 23:22:30.151466-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.225
+2020-08-30 23:22:30.151564-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.056
+2020-08-30 23:22:30.151655-0700 PyTorchPlayground[18364:1277166] [add] took: 0.054
+2020-08-30 23:22:30.151748-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.055
+2020-08-30 23:22:30.151918-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.116
+2020-08-30 23:22:30.152064-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.105
+2020-08-30 23:22:30.152157-0700 PyTorchPlayground[18364:1277166] [add] took: 0.050
+2020-08-30 23:22:30.152249-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.051
+2020-08-30 23:22:30.152417-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.113
+2020-08-30 23:22:30.152516-0700 PyTorchPlayground[18364:1277166] [upsample_nearest2d_vec] took: 0.054
+2020-08-30 23:22:30.152604-0700 PyTorchPlayground[18364:1277166] [add] took: 0.050
+2020-08-30 23:22:30.152692-0700 PyTorchPlayground[18364:1277166] [relu] took: 0.048
+2020-08-30 23:22:30.152883-0700 PyTorchPlayground[18364:1277166] [convolution] took: 0.129
+2020-08-30 23:22:30.152984-0700 PyTorchPlayground[18364:1277166] [sigmoid] took: 0.062
+2020-08-30 23:22:30.153101-0700 PyTorchPlayground[18364:1277166] [copy_to_host] took: 0.079
+2020-08-30 23:22:30.165382-0700 PyTorchPlayground[18364:1277166] [Sychronization] took 12.141
+2020-08-30 23:22:30.166361-0700 PyTorchPlayground[18364:1277166] [COPY From METAL] took 0.934
+Segmentation took: 21.3389

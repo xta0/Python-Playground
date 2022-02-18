@@ -1,2 +1,2 @@
 # Python-Playground
-Playground for experimenting python
+A Playground for experimenting ideas in PyTorch
