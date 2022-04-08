@@ -7,8 +7,11 @@ import torch
 from torchvision import datasets
 from torchvision import transforms
 
+import torch.optim as optim
 import torch.nn as nn
 import torch.nn.functional as F
+
+from torch.nn import init
 
 
 # Tensor transform
@@ -26,9 +29,10 @@ train_loader = torch.utils.data.DataLoader(dataset=svhn_train,
                                           shuffle=True,
                                           num_workers=num_workers)
 
-# current range
+dataiter = iter(train_loader)
+images, labels = dataiter.next()
 img = images[0]
-
+print(img.shape)
 print('Min: ', img.min())
 print('Max: ', img.max())
 
@@ -76,7 +80,7 @@ class Discriminator(nn.Module):
         self.conv1 = conv(3, conv_dim, 4)
         self.conv2 = conv(conv_dim, conv_dim*2, 4)                
         self.conv3 = conv(conv_dim*2, conv_dim*4, 4)
-        self.fc = (conv_dim*4*4*4, 1)
+        self.fc = nn.Linear(conv_dim*4*4*4, 1)
         
     def forward(self, x):
         # complete forward function
@@ -115,7 +119,7 @@ class Generator(nn.Module):
         self.fc = nn.Linear(z_size, conv_dim*4*4*4)
         self.deconv1 = deconv(conv_dim*4, conv_dim*2, 4)
         self.deconv2 = deconv(conv_dim*2, conv_dim, 4)
-        self.deconv3 = deconv(conv_dim*4, 3, 4, batch_norm = False)
+        self.deconv3 = deconv(conv_dim, 3, 4, batch_norm = False)
         
     def forward(self, x):
         x = self.fc(x)
@@ -127,6 +131,25 @@ class Generator(nn.Module):
         
         return x
 
+
+
+def weights_init_normal(m):
+    """
+    Applies initial weights to certain layers in a model .
+    The weights are taken from a normal distribution 
+    with mean = 0, std dev = 0.02.
+    :param m: A module or layer in a network    
+    """
+    # classname will be something like:
+    # `Conv`, `BatchNorm2d`, `Linear`, etc.
+    classname = m.__class__.__name__
+    
+    # TODO: Apply initial weights to convolutional and linear layers
+    mean = 0
+    dev = 0.02
+    if hasattr(m, 'weight') and (classname.find('Conv') != -1 or classname.find('Linear') != -1):
+         init.normal_(m.weight.data, mean, dev)
+         
 # define hyperparams
 conv_dim = 32
 z_size = 100
@@ -176,7 +199,7 @@ def fake_loss(D_out):
     loss = criterion(D_out.squeeze(), labels)
     return loss
 
-import torch.optim as optim
+
 
 # params
 lr = 0.0002
@@ -314,3 +337,4 @@ def view_samples(epoch, samples):
         im = ax.imshow(img.reshape((32,32,3)))
 
 _ = view_samples(-1, samples)
+

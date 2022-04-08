@@ -2,5 +2,7 @@
     "python.linting.pylintEnabled": false,
     "python.linting.enabled": true,
     "python.linting.pylintPath": "${workspace}",
-    "python.pythonPath": "/Users/taox/anaconda/bin/python"
+    "python.pythonPath": "/Users/taox/anaconda/bin/python",
+    "python.linting.flake8Enabled": false,
+    "python.linting.mypyEnabled": true
 }
