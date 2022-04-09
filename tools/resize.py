@@ -52,23 +52,10 @@ def main():
     img = Image.open(path)
     width, height = img.size
     print("image: (w:{0}, h: {1})".format(width, height))
-    out = crop_thumbnails_16_by_9(img, output)
-    bk = Image.new('RGBA', (width, height), (0, 0, 0, 255))
-    layer = Image.new('RGBA', (405, 720), (255, 255, 255, 255))
-    bk.paste(layer, ((1280-405)/2, 0))
-    bk.save('black_background.png')
-    
+    out = crop_thumbnails_16_by_9(img, output)    
     # font = ImageFont.truetype('./arial.ttf', 80)
     for idx, img in enumerate(out):
-        # draw text
-        # draw = ImageDraw.Draw(img)
-        # draw.text((350, 620), "{}".format(idx+1), font=font, fill=(255, 255, 255, 255))
-        print("thumbnail: (w:{0}, h: {1})".format(img.width, img.height))
-        bk = Image.new('RGBA', (width, height), (0, 0, 0, 255))
-        bk.paste(img, ((width - img.width) // 2, 0))
-
-        bk.save("{0}/img_{1}.png".format(output, idx + 1))
-        # img.save("{0}/img_{1}.png".format(output, idx + 1))
+        img.save("{0}/img_{1}.png".format(output, idx + 1))
 
 
 if __name__ == "__main__":
