@@ -4,18 +4,12 @@ import os
 import sys
 import subprocess
 
-def _pad_right(x, size):
+def _pad(x, size):
     chars = str(x)
     pad_len = size - len(chars)
     ret = chars + ' ' * pad_len    
     return bytearray(ret, 'utf-8')
     
-
-def _pad_left(x, size):
-    chars = str(x)
-    pad_len = size - len(chars)
-    ret = ' ' * pad_len  + chars
-    return bytearray(ret, 'utf-8')
     
 GLOBAL_HEADER_SIZE = 8
 GLOBAL_HEADER = b"!<arch>\n"
@@ -24,9 +18,9 @@ END_OF_FILE_HEADER_MARKER = b"\x60\x0A"
 ENTRY_SIZE = 60
 SPECIAL_ENTRIES = ("/", "//", "/SYM64/")
 
-COMMON_MODIFICATION_TIME_STAMP = _pad_right(476064000, 12)
-ZERO_BYTES = _pad_right(0, 6)
-DEFAULT_MODE = _pad_right(100644, 8)
+COMMON_MODIFICATION_TIME_STAMP = _pad(476064000, 12)
+DEFAULT_MODE = _pad(100644, 8)
+ZERO_BYTES = _pad(0, 6)
 
 
 def _modify_buffer(buffer: bytearray):
