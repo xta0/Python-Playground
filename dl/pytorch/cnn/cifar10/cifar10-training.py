@@ -19,6 +19,13 @@ if not train_on_gpu:
 else:
     print('CUDA is available!  Training on GPU ...')
 
+# train on MPS
+train_on_mps = torch.backends.mps.is_available()
+if train_on_mps:
+    print('MPS is available.  Training on MPS ...')
+else:
+    print ("MPS device not found.")
+
 
 # helper function to un-normalize and display an image
 def showSamples(images, labels, classes):
@@ -112,13 +119,17 @@ print(model)
 # move tensors to GPU if CUDA is available
 if train_on_gpu:
     model.cuda()
+elif train_on_mps:
+    print("Train on MPS device!")
+    mps_device = torch.device("mps")
+    model.to(device=mps_device)
 
 loss_fn = nn.NLLLoss()
 optimizer = optim.SGD(model.parameters(), lr=0.01)
 epochs = 30
 
 # # Start training
-valid_loss_min = np.Inf  # track change in validation loss
+valid_loss_min = np.inf  # track change in validation loss
 train_loss_vec = []
 valid_loss_vec = []
 for epoch in range(1, epochs):
@@ -128,6 +139,8 @@ for epoch in range(1, epochs):
         # move tensors to GPU if CUDA is available
         if train_on_gpu:
             images, labels = images.cuda(), labels.cuda()
+        elif train_on_mps:
+            images, labels = images.to('mps'), labels.to('mps')
         optimizer.zero_grad()
         outputs = model(images)
         loss = loss_fn(outputs, labels)
@@ -142,6 +155,8 @@ for epoch in range(1, epochs):
             for images, labels in valid_loader:
                 if train_on_gpu:
                     images, labels = images.cuda(), labels.cuda()
+                elif train_on_mps:
+                    images, labels = images.to('mps'), labels.to('mps')
                 output = model(images)
                 loss = loss_fn(output, labels)
                 valid_loss += loss.item() * images.size(0)
