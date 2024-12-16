@@ -153,10 +153,7 @@ def sample_ddpm(n_sample, save_rate=20):
     return samples, intermediate
 
 # visualize samples
-plt.clf()
-samples, intermediate_ddpm = sample_ddpm(32)
-animation_ddpm = plot_sample(intermediate_ddpm,32,4,save_dir, "ani_run", None, save=False)
-HTML(animation_ddpm.to_jshtml())
+
 
 # incorrectly sample without adding in noise
 # @torch.no_grad()
@@ -190,4 +187,7 @@ HTML(animation_ddpm.to_jshtml())
 # HTML(animation.to_jshtml())
 
 if __name__ == '__main__':
-    train()
+    plt.clf()
+    samples, intermediate_ddpm = sample_ddpm(32)
+    animation_ddpm = plot_sample(intermediate_ddpm,32,4,save_dir, "ani_run", None, save=False)
+    HTML(animation_ddpm.to_jshtml())

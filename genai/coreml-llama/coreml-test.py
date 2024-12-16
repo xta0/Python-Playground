@@ -49,5 +49,4 @@ metadata {
     value: "TorchScript"
   }
 }
-
 """
