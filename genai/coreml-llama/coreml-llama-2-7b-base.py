@@ -12,8 +12,8 @@ input_ids = tokenizer(prompt, return_tensors='pt').input_ids.to(model.device)
 # Use model.generate to do all steps at once
 output_ids = model.generate(
     input_ids,
-    max_new_tokens=10,   # adjust as needed
-    temperature=0.7,      # adjust as needed
+    max_new_tokens=20,   # adjust as needed
+    temperature=0.9,      # adjust as needed
     top_p=0.9,            # adjust as needed
     do_sample=True        # sampling rather than greedy
 )
