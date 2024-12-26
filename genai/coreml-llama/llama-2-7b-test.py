@@ -33,7 +33,7 @@ print(f"Number of attention blocks: {len(attention_blocks)}")
 
 tokenizer = AutoTokenizer.from_pretrained(model_id, legacy=False)
 
-prompt = "what is genai?"
+prompt = "What is GenAI?"
 inputs = tokenizer(prompt, return_tensors='pt')
 print("inputs: ", inputs)
 
@@ -49,7 +49,7 @@ print("input_ids.shape: ", input_ids.shape)
 attention_mask = inputs["attention_mask"]
 print("attention_mask.shape: ", input_ids.shape)
 
-max_new_tokens = 10
+max_new_tokens = 100
 generated_ids = input_ids.clone()
 
 for i in range(max_new_tokens):

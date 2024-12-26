@@ -3,13 +3,13 @@ from transformers import AutoTokenizer
 import numpy as np
 
 # Load the model
-mlmodel = ct.models.MLModel("./llama2-7b-hf.mlpackage")
+mlmodel = ct.models.MLModel("./llama2-7b-hf-quant.mlpackage")
 print(mlmodel.get_spec().WhichOneof("Type"))
 # print(mlmodel)
 # Get the model spec and inspect the program code
 spec = mlmodel.get_spec()
 # print(spec)
-
+print(spec.description.input)
 program = spec.mlProgram
 # print(program)
 # functions = program.functions
@@ -48,7 +48,7 @@ generated_ids = input_ids_np  # Start with the input query tokens
 batch_size, context_size = generated_ids.shape
 
 
-max_new_tokens = 10  # Number of tokens to generate
+max_new_tokens = 100  # Number of tokens to generate
 context_length = 24  # Fixed sequence length expected by Core ML model
 
 # Start with input IDs and attention mask
@@ -58,9 +58,11 @@ attention_mask = attention_mask_np
 # Generate tokens in a loop
 for i in range(max_new_tokens):
     # Predict logits using the Core ML model
+    print("generated_ids shape:", generated_ids.shape, generated_ids.dtype)
+    print("attention_mask shape:", attention_mask.shape, attention_mask.dtype)
     coreml_outputs = mlmodel.predict({
         "inputIds": generated_ids,
-        "attentionMask": attention_mask_np
+        "attentionMask": attention_mask
     })
     coreml_logits_np = coreml_outputs["logits"]  # Shape: [batch_size, seq_len, vocab_size]
     
@@ -70,7 +72,7 @@ for i in range(max_new_tokens):
     # Select the next token (greedy decoding - pick the token with max probability)
     next_token_id = np.argmax(next_token_logits, axis=-1).reshape((batch_size, 1))  # Shape: [batch_size, 1]
     
-  # Append the new token and slide the window
+    # Append the new token and slide the window
     generated_ids = np.concatenate([generated_ids, next_token_id], axis=1)
     attention_mask = np.concatenate([attention_mask, np.array([[1]], dtype=np.int32)], axis=1)
     
@@ -78,6 +80,9 @@ for i in range(max_new_tokens):
     if generated_ids.shape[1] > context_length:
         generated_ids = generated_ids[:, -context_length:]  # Trim to last 24 tokens
         attention_mask = attention_mask[:, -context_length:]
+    
+    generated_ids = np.ascontiguousarray(generated_ids, dtype=np.int32)
+    attention_mask = np.ascontiguousarray(attention_mask, dtype=np.int32)
     
     # Decode the latest token to a string
     next_token_str = tokenizer.decode(next_token_id[0], skip_special_tokens=True)
@@ -91,17 +96,3 @@ for i in range(max_new_tokens):
     if next_token_id[0][0] == tokenizer.eos_token_id:
         print("End of sequence token encountered. Stopping generation.")
         break
-
-# # quantization
-# op_config = ct.optimize.coreml.OpLinearQuantizerConfig(
-#     mode="linear_symmetric",
-#     dtype="int4",
-#     granularity="per_block",
-#     block_size=32,
-# )
-# config = ct.optimize.coreml.OptimizationConfig(global_config=op_config)
-# mlmodel_int4 = ct.optimize.coreml.linear_quantize_weights(
-#     mlmodel, config=config
-# )
-
-# mlmodel.save("llama2-7b-hf-quant.mlpackage")  # 13GB, fp32

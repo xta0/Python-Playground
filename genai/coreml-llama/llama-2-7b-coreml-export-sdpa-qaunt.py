@@ -45,7 +45,7 @@ attention_mask = inputs["attention_mask"]
 
 # convert to coreml
 
-batch_size, context_size = 1, 24
+batch_size, context_size = 1, 1024
 input_shape = (batch_size, context_size)
 
 # trace the PyTorch model
@@ -85,4 +85,4 @@ mlmodel_int4 = ct.optimize.coreml.linear_quantize_weights(
     mlmodel, config=config
 )
 
-mlmodel.save("llama2-7b-hf-quant.mlpackage")  # 13GB, fp32
+mlmodel_int4.save("llama2-7b-hf-quant-1024.mlpackage")  # 3.5GB, int4
