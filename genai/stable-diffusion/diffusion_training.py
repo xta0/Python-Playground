@@ -154,6 +154,7 @@ def train():
         for x, _ in pbar:   # x: images
             optim.zero_grad()
             x = x.to(device)
+            print("x.shape: ", x.shape)
             
             # perturb data
             noise = torch.randn_like(x)
@@ -218,8 +219,9 @@ def sampling():
     # visualize samples
     plt.clf()
     samples, intermediate_ddpm = sample_ddpm(32)
-    animation_ddpm = plot_sample(intermediate_ddpm,32,4,save_dir, "ani_run", None, save=False)
-    HTML(animation_ddpm.to_jshtml())
+    show_intermediate_grid(intermediate_ddpm)
+    # animation_ddpm = plot_sample(intermediate_ddpm,32,4,save_dir, "ani_run", None, save=False)
+    # HTML(animation_ddpm.to_jshtml())
     pass
 
 if __name__ == '__main__':

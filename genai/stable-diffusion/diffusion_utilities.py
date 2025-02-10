@@ -248,3 +248,28 @@ transform = transforms.Compose([
     transforms.Normalize((0.5,), (0.5,))  # range [-1,1]
 
 ])
+
+def show_intermediate_grid(intermediate):
+    """
+    Display the intermediate results as a grid.
+    `intermediate` is assumed to be a NumPy array with shape
+      (num_frames, batch, channels, height, width).
+    Here, we will display the first sample from each frame.
+    """
+    num_frames = intermediate.shape[0]
+    
+    # Create subplots: one row with one image per frame.
+    fig, axs = plt.subplots(1, num_frames, figsize=(num_frames * 3, 3))
+    
+    for idx in range(num_frames):
+        # Get the first image from the batch at this frame
+        img = intermediate[idx, 0]  # shape: (channels, height, width)
+        # Transpose to (height, width, channels) for plt.imshow
+        img = np.transpose(img, (1, 2, 0))
+        
+        axs[idx].imshow(img)
+        axs[idx].set_title(f"Step {idx}")
+        axs[idx].axis("off")
+    
+    plt.tight_layout()
+    plt.show()
