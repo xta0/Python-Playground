@@ -27,7 +27,7 @@ class BaselineLlamaForCausalLM(LlamaForCausalLM):
         )
         return out.logits
 
-model_id: str = "meta-llama/Llama-2-7b-hf"
+model_id: str = "meta-llama/Llama-3.1-8B-Instruct"
 torch_model = BaselineLlamaForCausalLM.from_pretrained(model_id).eval()
 
 # Count the attention blocks
@@ -74,15 +74,15 @@ mlmodel: ct.models.MLModel = ct.convert(
 )
 
 # quantization
-op_config = ct.optimize.coreml.OpLinearQuantizerConfig(
-    mode="linear_symmetric",
-    dtype="int4",
-    granularity="per_block",
-    block_size=32,
-)
-config = ct.optimize.coreml.OptimizationConfig(global_config=op_config)
-mlmodel_int4 = ct.optimize.coreml.linear_quantize_weights(
-    mlmodel, config=config
-)
+# op_config = ct.optimize.coreml.OpLinearQuantizerConfig(
+#     mode="linear_symmetric",
+#     dtype="int4",
+#     granularity="per_block",
+#     block_size=32,
+# )
+# config = ct.optimize.coreml.OptimizationConfig(global_config=op_config)
+# mlmodel_int4 = ct.optimize.coreml.linear_quantize_weights(
+#     mlmodel, config=config
+# )
 
-mlmodel_int4.save("llama2-7b-hf-quant-1024.mlpackage")  # 3.5GB, int4
+mlmodel.save("Llama-3.1-8B-Instruct.mlpackage")  # 3.5GB, int4

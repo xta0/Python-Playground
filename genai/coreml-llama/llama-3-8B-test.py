@@ -24,7 +24,7 @@ class BaselineLlamaForCausalLM(LlamaForCausalLM):
         )
         return out.logits
 
-model_id: str = "meta-llama/Llama-2-7b-hf"
+model_id: str = "meta-llama/Llama-3.1-8B-Instruct"
 torch_model = BaselineLlamaForCausalLM.from_pretrained(model_id).eval()
 
 # Count the attention blocks
