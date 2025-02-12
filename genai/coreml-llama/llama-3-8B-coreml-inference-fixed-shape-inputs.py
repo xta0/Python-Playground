@@ -119,7 +119,9 @@ Unlike narrow or specialized AI, which is designed to perform a specific task,
 GenAI aims to replicate human-like intelligence and cognitive abilities. 
 This includes capabilities such as reasoning, problem-solving, learning, and decision-making, across various domains and tasks. 
 GenAI is still a topic of ongoing research and development,
+"""
 
+"""
 Results from the quantized model:
 
 What is GenAI? GenAI is a type of artificial intelligence that uses a combination of machine learning and natural language processing to generate human-like text,
