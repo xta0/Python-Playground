@@ -13,7 +13,7 @@ base_pipe = StableDiffusionXLPipeline.from_pretrained(
 )
 base_pipe.watermark = None
 
-prompt = "realisitic photo of astronaut cat in fighter cockpit, Fujifile, Kodak Portra 400, vintage photography, detailed, 8K"
+prompt = "ultra detailed, detailed face, detailed eyes, beautiful doe eyes, masterpiece, best quality, photo realistic, absurdres, 8K, raw photo, 1girl, solo, beautiful young woman, 20yo, realistic skin texture, shiny skin, office, black thighhighs, garter straps, turtleneck, id card, lanyard, sleeveless, pencil skirt, perfect body, natural huge breasts, grin"
 
 base_pipe.to("mps")
 

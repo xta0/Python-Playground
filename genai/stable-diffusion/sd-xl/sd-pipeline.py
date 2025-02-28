@@ -26,10 +26,15 @@ refiner_pipe = StableDiffusionXLImg2ImgPipeline.from_single_file(
 # Fujifile, Kodak Portra 400, vintage photography
 # """
 
-prompt = "realisitic photo of astronaut cat in fighter cockpit, Fujifile, Kodak Portra 400, vintage photography, detailed, 8K"
+prompt = """
+ultra detailed, detailed face, detailed eyes, beautiful doe eyes, masterpiece,
+best quality, photo realistic, absurdres, 8K, raw photo, 1girl, solo, beautiful young woman, 
+20yo, asian, realistic skin texture, shiny skin, office, black thighhighs, garter straps, turtleneck, 
+lanyard, sleeveless, pencil skirt, perfect body, natural huge breasts, grin, smile to the camera
+"""
 
 neg_prompt = """
-paint, watermark, 3D render, illustration, drawing, worst quality, low quality
+paint, watermark, 3D render, illustration, drawing, worst quality, low quality, animation, animated
 """
 
 base_pipe.to("mps")
