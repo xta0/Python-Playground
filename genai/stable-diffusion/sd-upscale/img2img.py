@@ -7,7 +7,7 @@ from img_utils import resize_img
 
 text2img_pipe = StableDiffusionPipeline.from_pretrained(
     "stablediffusionapi/deliberate-v2",
-    torch_dtype = torch.float16,
+    torch_dtype = torch.float32,
     cache_dir = "/Volumes/ai-1t/diffuser"
 ).to("mps")
 
@@ -23,7 +23,7 @@ raw_image = text2img_pipe(
     negative_prompt = neg_prompt,
     height = 256, 
     width = 256,
-    generator = torch.Generator("mps").manual_seed(10)
+    generator = torch.Generator("mps").manual_seed(99)
 ).images[0]
 
 text2img_pipe.to("cpu")
@@ -51,7 +51,7 @@ NSFW, worst quality, low quality, lowres, bad anatomy
 prompt = f"{sr_prompt} {prompt}"
 img2img_pipe = StableDiffusionImg2ImgPipeline.from_pretrained(
     "stablediffusionapi/deliberate-v2",
-    torch_dtype = torch.float16,
+    torch_dtype = torch.float32,
     cache_dir = "/Volumes/ai-1t/diffuser"
 ).to("mps")
 
