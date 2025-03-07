@@ -215,7 +215,6 @@ def get_weighted_text_embeddings(
 
         for j in range(len(prompt_weights)):
             weight_tensor = prompt_weights[j]
-            print("weight_tensor: ", weight_tensor)
             prompt_embedding[j] *= weight_tensor
         prompt_embedding = prompt_embedding.unsqueeze(0)
         embeds.append(prompt_embedding)
@@ -231,11 +230,9 @@ def get_weighted_text_embeddings(
             device = pipe.device
         )
         neg_prompt_embedding = pipe.text_encoder(neg_prompt_tokens)[0].squeeze(0)
-        print("neg_prompt_embedding: ", neg_prompt_embedding.shape)
 
         for j in range(len(neg_prompt_weights)):
             weight_tensor = neg_prompt_weights[j]
-            print("weight_tensor: ", weight_tensor.shape)
             neg_prompt_embedding[j] *= weight_tensor
         neg_prompt_embedding = neg_prompt_embedding.unsqueeze(0)    
         neg_embeds.append(neg_prompt_embedding)

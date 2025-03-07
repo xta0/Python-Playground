@@ -12,7 +12,8 @@ pipe = StableDiffusionPipeline.from_pretrained(
 )
 pipe.to("mps")
 
-prompt = "photo, cute dog running on the road" * 20
+
+prompt = "photo, a cute white dog running on the road" * 10
 neg_prompt = "low resolution, bad anatomy"
 prompt_embeds, prompt_neg_embeds = long_prompt_encoding(
     pipe,
@@ -21,7 +22,6 @@ prompt_embeds, prompt_neg_embeds = long_prompt_encoding(
 )
 
 print(prompt_embeds.shape, prompt_neg_embeds.shape)
-print(prompt_embeds) #  torch.Size([1, 166, 768])
 
 image = pipe(
     prompt = None,

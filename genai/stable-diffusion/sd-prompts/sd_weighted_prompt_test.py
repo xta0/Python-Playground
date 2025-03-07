@@ -12,8 +12,8 @@ pipe = StableDiffusionPipeline.from_pretrained(
 )
 pipe.to("mps")
 
-prompt = "photo, cute dog running on the road" * 10
-prompt = prompt + ", pure (white:1.5) dog" * 10
+prompt = "photo, a cute dog running in the yard" * 10
+prompt += "pure, (white: 1.5) dog" * 10
 neg_prompt = "low resolution, bad anatomy"
 prompt_embeds, prompt_neg_embeds = get_weighted_text_embeddings(
     pipe,
