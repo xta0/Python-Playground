@@ -215,7 +215,7 @@ def get_weighted_text_embeddings(
 
         for j in range(len(prompt_weights)):
             weight_tensor = prompt_weights[j]
-            print("weight_tensor: ", weight_tensor.shape)
+            print("weight_tensor: ", weight_tensor)
             prompt_embedding[j] *= weight_tensor
         prompt_embedding = prompt_embedding.unsqueeze(0)
         embeds.append(prompt_embedding)
